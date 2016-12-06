@@ -13,9 +13,9 @@ module.exports = Object.assign(commonConfig, {
     output: output,
     module: {
         loaders: commonConfig.module.loaders.concat({
-            test: /\.s?css$/,
+            test: /\.less$/,
             exclude: /(node_modules)/,
-            loader: extractCSS.extract('style', 'css!postcss!sass')
+            loader: extractCSS.extract('style', 'css!postcss!less')
         })
     },
     plugins: commonConfig.plugins.concat(extractCSS)

@@ -1,198 +1,439 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="en"> <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Webpack Boilerplate</title>
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <title>Test</title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="description" content="The portfolio of Christian Grill, a Web & Product Designer somewhere in Northeast United States." />
+    <meta name="keywords" content="christian, grill, christian grill, web design, graphic design, websites, graphics, illustration, developer" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
     <link rel="stylesheet" type="text/css" href="build/style.css" />
 </head>
 
-<body>
-    <!--EXAMPLE PAGE STARTS-->
-    <!-- NAVIGATION -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+<body class="">
+<section id="bldg"><img src="./img/empireBldg_2.png"></section>
+<section id="top">
+    <header id="home-top" class="nav-top nav-fixed nav-root">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Project name</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#" id="scrollTo-myCarousel">Home</a></li>
-                    <li><a href="#about" id="scrollTo-about-us">About</a></li>
-                    <li><a href="#about" id="scrollTo-marketing">Marketing</a></li>
-                    <li><a href="#about" id="scrollTo-feature">feature</a></li>
-                    <li><a href="#contact" id="scrollTo-contact-us">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
+            <div class="row">
+                <div class="col-md-6 col-xs-6">
+                    <h1 id="header-logo" class="image-text">
+                        <a href="/">
+                            <img src="/img/logo/ctgrillLogo.png">
+                        </a>
+                    </h1>
+                </div>
+                <div class="col-md-6 col-xs-6">
+                    <nav id="top-nav">
+                        <ul class="nav-list transistion">
+                            <li><a class="active" href="index.html">Me</a></li>
+                            <li><a id="scrollTo-myWork" href="#work">My Work</a></li>
                         </ul>
-                    </li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </nav>
-    <!-- CAROUSEL -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-            <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="item">
-                <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Example headline.</h1>
-                        <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="item active">
-                <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>One more for good measure.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                    </div>
+                    </nav>
                 </div>
             </div>
         </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <!-- ABOUT US -->
-    <div id="about-us" class="jumbotron">
-        <div class="container">
-            <h2><i>About</i> Us</h2>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+    </header>
+    <div id="airSpace"></div>
+    <div id="kongFace"></div>
+    <div id="kongSlap"></div>
+    <div class="monster-wrap">
+        <div id="monster-skull">
+            <div class="eye">
+                <div class="iris"></div>
+            </div>
+            <div class="eye">
+                <div class="iris"></div>
+            </div>
+        </div>
+        <div id="monster">
+            <div id="monster-body">
+                <img src="./img/monster/monster.png">
+            </div>
+            <div id="monster-arm">
+                <img src="./img/monster/monsterArm.png">
+            </div>
+            <div id="monster-leg">
+                <img src="./img/monster/monsterLeg.png">
+            </div>
+            <div id="monster-toes">
+                <img src="./img/monster/monsterToes.png">
+            </div>
         </div>
     </div>
-    <!-- MARKETING -->
-    <div id="marketing" class="container">
-        <!-- Three columns of text below the carousel -->
+</section>
+<section id="me">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-            </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-            </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-            </div>
-            <!-- /.col-lg-4 -->
-        </div>
-        <!-- /.row -->
-        <!-- START THE FEATURETTES -->
-        <hr id="feature" class="featurette-divider">
-        <div class="row featurette" id="featurette-1">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzUwMHg1MDAvYXV0bwpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE1NDE2OGI3NTk5IHRleHQgeyBmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTU0MTY4Yjc1OTkiPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRUVFRUVFIi8+PGc+PHRleHQgeD0iMTg1LjEyNSIgeT0iMjYxLjEiPjUwMHg1MDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true">
-            </div>
-        </div>
-        <hr class="featurette-divider">
-        <div class="row featurette" id="featurette-2">
-            <div class="col-md-7 col-md-push-5">
-                <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5 col-md-pull-7">
-                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzUwMHg1MDAvYXV0bwpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE1NDE2OGI1Yjk4IHRleHQgeyBmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTU0MTY4YjViOTgiPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRUVFRUVFIi8+PGc+PHRleHQgeD0iMTg1LjEyNSIgeT0iMjYxLjEiPjUwMHg1MDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true">
-            </div>
-        </div>
-        <hr class="featurette-divider">
-        <div class="row featurette" id="featurette-3">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzUwMHg1MDAvYXV0bwpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE1NDE2OGI0OWYwIHRleHQgeyBmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTU0MTY4YjQ5ZjAiPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRUVFRUVFIi8+PGc+PHRleHQgeD0iMTg1LjEyNSIgeT0iMjYxLjEiPjUwMHg1MDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true">
-            </div>
-        </div>
-        <hr class="featurette-divider">
-        <!-- /END THE FEATURETTES -->
-    </div>
-    <!-- CONTACT US -->
-    <div id="contact-us">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d806207.607910047!2d-122.98074945934722!3d37.87787159959964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808583a3a688d7b5%3A0x8c891b8457461fa9!2sSan+Francisco+Bay+Area%2C+CA!5e0!3m2!1sen!2sus!4v1460670281929" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-        <div class="jumbotron">
-            <div class="container">
-                <h2><i>Contact</i> Us</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
-                <hr />
-                <p>123 ABC Street, Suite 101, Bay Area, CA 9XXXX
-                    <br /> p: (123) 456-7890
-                    <br /> f: (123) 456-7890</p>
-                <p>
-                    abc@example.com
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>Webpack Boilerplate built by <a href="https://github.com/geniuscarrier">@geniuscarrier</a>.</p>
-        <p>
-            <a href="#" id="scrollTo-myCarousel">Back to top</a>
-        </p>
-    </footer>
-    <!--EXAMPLE PAGE ENDS-->
-    <script src="build/bundle.js"></script>
-</body>
+            <div class="col-md-12">
+                <article>
+                    <header>
+                        <h2>My passion</h2>
+                    </header>
+                    <div id="skillSet" class="row">
+                        <div class="col-md-4">
+                            <div class="home-design-info">
+                                <div class="bubble right">
+                                    <div class="bubbling-design-icons-vert"></div>
+                                </div>
+                            </div>
+                            <div class="deets">
+                                <h3>Design</h3>
+                                <p>Logos and iconography.<br>Simple wireframes or detailed style guides.<br>Paper prototypes to full page layouts<br>and component interactions.<br>You name it, I've done it.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
 
+                        </div>
+                        <div class="col-md-4">
+                            <div class="home-dev-info">
+                                <div class="bubble left">
+                                    <div class="bubbling-dev-icons-vert"></div>
+                                </div>
+                            </div>
+                            <div class="deets">
+                                <h3>Develop</h3>
+                                <p>I build mobile first responsive<br>applications in HTML5, CSS3 and various flavors of Javascript.<br>Using frameworks &amp; plugins such as Node, React, Webpack, Bootstrap, Less/Sass.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="extras" class="row">
+                        <div class="col-md-12">
+                            <div class="deets">
+                                <h3>What sets me apart?</h3>
+                                <p>Three words. Customer driven innovation.<br>
+                                    Being a designer and developer allows me to assess a user's needs and challenges.<br>
+                                    As I create and evolve a design, it gives me an appreciation for intended flows and interactions.<br>
+                                    While developing, I prefer to follow <a href="https://en.bem.info/methodology/" target="_blank" title="BEM methodology website">BEM methods</a> and <a href="http://www.jslint.com/" target="_blank" title="jslint">lint</a> my javascript to ensure clean, legible code.<br>
+                                    Accessibility is a must as well, as so I like to employ <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA" target="_blank" title="ARIA Docs">ARIA</a> for compliancy.<br>
+                                    That's it. Curing code disease, one line at a time.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="myWork">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <article>
+                    <header>
+                        <h2>My work</h2>
+                        <h3>A collection of some of the projects I've done.</h3>
+                    </header>
+                </article>
+                <div id="workStage">
+                    <div id="devices"></div>
+                    <section class="ppgf opaque">
+                        <div class="description">
+                            <h3>PayPal Giving Fund: <span>Campaign update dashboard</span></h3>
+                            <h4>Design &amp; Front-end Development</h4>
+                            <p>A responsive dashboard layer for charity campaigns to see latest donation totals and real-time social media feeds referencing the campaign. Includes receipt for non-profit donations through PayPal Giving Fund.</p>
+                            <p><a href="#" class="scroll">Scroll the experience</a> Pages: &nbsp;<a class="active" href="#">1</a> <a href="#">2</a></p>
+                        </div>
+                        <div class="grp1">
+                            <span class="mobileScreen"><img src="./img/projScreens_PP_mobile.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/projScreens_PP.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/projScreens_PP_tablet.jpg"></span>
+                        </div>
+                        <div class="grp2">
+                            <span class="mobileScreen"><img src="./img/screens/projScreens_PP_mobile_2.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/projScreens_PP_2.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/projScreens_PP_tablet_2.jpg"></span>
+                        </div>
+                    </section>
+                    <section class="ppgf2">
+                        <div class="description">
+                            <h3>PayPal Giving Fund: <span>Rapid response template</span></h3>
+                            <h4>Design &amp; Front-end Development</h4>
+                            <p>A prelimimary template to quickly create pages for non-profit partnerships in response to charity promotions or crisis campaigns.</p>
+                            <p><a href="#" class="scroll">Scroll the experience</a></p>
+                        </div>
+                        <span class="mobileScreen"><img src="./img/screens/projScreens_PP_mobile_3.jpg"></span>
+                        <span class="desktopScreen"><img src="./img/screens/projScreens_PP_3.jpg"></span>
+                        <span class="tabletScreen"><img src="./img/screens/projScreens_PP_tablet_3.jpg"></span>
+                    </section>
+                    <section class="p2p">
+                        <div class="description">
+                            <h3>PayPal: <span>Revised donation flow</span></h3>
+                            <h4>Design &amp; Front-end Development</h4>
+                            <p>eBay acquired MissionFish and subsequently required several redesigns and rebranding of various flows and processes. This is one for donation payments using PayPal's peer to peer payment structure. </p>
+                            <p><a href="#" class="scroll">Scroll the experience</a> Pages: &nbsp;<a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a></p>
+                        </div>
+                        <div class="grp1">
+                            <span class="mobileScreen"><img src="./img/screens/projScreens_P2P_mobile.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/projScreens_P2P.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/projScreens_P2P_tablet.jpg"></span>
+                        </div>
+                        <div class="grp2">
+                            <span class="mobileScreen"><img src="./img/screens/projScreens_P2P_mobile_a.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/projScreens_P2P_a.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/projScreens_P2P_tablet_a.jpg"></span>
+                        </div>
+                        <div class="grp3">
+                            <span class="mobileScreen"><img src="./img/screens/projScreens_P2P_mobile_b.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/projScreens_P2P_b.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/projScreens_P2P_tablet_b.jpg"></span>
+                        </div>
+                        <div class="grp4">
+                            <span class="mobileScreen"><img src="./img/screens/projScreens_P2P_mobile_c.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/projScreens_P2P_c.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/projScreens_P2P_tablet_c.jpg"></span>
+                        </div>
+                        <div class="grp5">
+                            <span class="mobileScreen"><img src="./img/screens/projScreens_P2P_mobile_d.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/projScreens_P2P_d.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/projScreens_P2P_tablet_d.jpg"></span>
+                        </div>
+                        <div class="grp6">
+                            <span class="mobileScreen"><img src="./img/screens/projScreens_P2P_mobile_e.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/projScreens_P2P_e.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/projScreens_P2P_tablet_e.jpg"></span>
+                        </div>
+                    </section>
+                    <section class="dtc">
+                        <div class="description">
+                            <h3>PayPal: <span>Donate the Change</span></h3>
+                            <h4>Design &amp; Front-end Development</h4>
+                            <p>A responsive informational sign-up page for PayPal's "Donate the Change" program. Customer driven innovation sessions and usability tests were held to influence final product. Live in Brazil for continued testing.</p>
+                            <p><a href="#" class="scroll">Scroll the experience</a></p>
+                        </div>
+                        <span class="mobileScreen"><img src="./img/screens/projScreens_PPGF_mobile.jpg"></span>
+                        <span class="desktopScreen"><img src="./img/screens/projScreens_PPGF.jpg"></span>
+                        <span class="tabletScreen"><img src="./img/screens/projScreens_PPGF_tablet.jpg"></span>
+                    </section>
+                    <section class="ppcc">
+                        <div class="description">
+                            <h3>PayPal: <span>Fundraiser Hub</span></h3>
+                            <h4>Design &amp; Front-end Development</h4>
+                            <p>A responsive hub site for non-profit organizations confirmed in PayPal's registry. Includes search, charity detail pages, donation flow and receipt.</p>
+                            <p><a href="#" class="scroll">Scroll the experience</a> Pages: &nbsp;<a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a></p>
+                        </div>
+                        <div class="grp1">
+                            <span class="mobileScreen"><img src="./img/screens/projScreens_PPGF_mobile_2.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/projScreens_PPGF_2.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/projScreens_PPGF_tablet_2.jpg"></span>
+                        </div>
+                        <div class="grp2">
+                            <span class="mobileScreen"><img src="./img/screens/projScreens_PPGF_mobile_2a.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/projScreens_PPGF_2a.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/projScreens_PPGF_tablet_2a.jpg"></span>
+                        </div>
+                        <div class="grp3">
+                            <span class="mobileScreen"><img src="./img/screens/projScreens_PPGF_mobile_2b.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/projScreens_PPGF_2b.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/projScreens_PPGF_tablet_2b.jpg"></span>
+                        </div>
+                    </section>
+                    <section class="d2ppAcq">
+                        <div class="description">
+                            <h3>PayPal: <span>eBay Member Acquisition</span></h3>
+                            <h4>Design &amp; Front-end Development</h4>
+                            <p>An email promotion sent after purchase to existing eBay members and it's accompanying responsive landing page for easy sign-up.</p>
+                            <p><a href="#" class="scroll">Scroll the experience</a> Pages: &nbsp;<a class="active" href="#">1</a> <a href="#">2</a></p>
+                        </div>
+                        <div class="grp1">
+                            <span class="mobileScreen email">
+                                <img src="./img/screens/mobileGmail.png">
+                                <img src="./img/screens/mobileGmail_PP.png">
+                            </span>
+                            <span class="desktopScreen email">
+                                <img src="./img/screens/desktopGmail.png">
+                                <img src="./img/screens/desktopGmail_PP.png">
+                            </span>
+                            <span class="tabletScreen email">
+                                <img src="./img/screens/tabletGmail.png">
+                                <img src="./img/screens/tabletGmail_PP.png">
+                            </span>
+                        </div>
+                        <div class="grp2">
+                            <span class="mobileScreen"><img src="./img/screens/mobilePPLander.jpg"></span>
+                            <span class="desktopScreen"><img src="./img/screens/desktopPPLander.jpg"></span>
+                            <span class="tabletScreen"><img src="./img/screens/desktopPPLander.jpg"></span>
+                        </div>
+                    </section>
+                    <section class="adGen">
+                        <div class="description">
+                            <h3>PayPal: <span>Ad Generator</span></h3>
+                            <h4>Design &amp; Front-end Development</h4>
+                            <p>A self-help ad generator for merchants that allows their customers to create a PayPal account and finance their purchase at the same time.</p>
+                            <p><a href="#" class="scroll">Scroll the experience</a> Pages: &nbsp;<a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#">7</a></p>
+                        </div>
+                        <div class="grp1">
+                            <span class="mobileScreen"><img src="./img/screens/AdGenerator_mobile.png"></span>
+                            <span class="desktopScreen"><img src="./img/screens/AdGenerator.png"></span>
+                            <span class="tabletScreen"><img src="./img/screens/AdGenerator.png"></span>
+                        </div>
+                        <div class="grp2">
+                            <span class="mobileScreen"><img src="./img/screens/AdGenerator2_mobile.png"></span>
+                            <span class="desktopScreen"><img src="./img/screens/AdGenerator2.png"></span>
+                            <span class="tabletScreen"><img src="./img/screens/AdGenerator2.png"></span>
+                        </div>
+                        <div class="grp3">
+                            <span class="mobileScreen"><img src="./img/screens/AdGenerator3_mobile.png"></span>
+                            <span class="desktopScreen"><img src="./img/screens/AdGenerator3.png"></span>
+                            <span class="tabletScreen"><img src="./img/screens/AdGenerator3.png"></span>
+                        </div>
+                        <div class="grp4">
+                            <span class="mobileScreen"><img src="./img/screens/AdGenerator3a_mobile.png"></span>
+                            <span class="desktopScreen"><img src="./img/screens/AdGenerator3a.png"></span>
+                            <span class="tabletScreen"><img src="./img/screens/AdGenerator3a.png"></span></span>
+                        </div>
+                        <div class="grp5">
+                            <span class="mobileScreen"><img src="./img/screens/AdGenerator4_mobile.png"></span>
+                            <span class="desktopScreen"><img src="./img/screens/AdGenerator4.png"></span>
+                            <span class="tabletScreen"><img src="./img/screens/AdGenerator4.png"></span>
+                        </div>
+                        <div class="grp6">
+                            <span class="mobileScreen"><img src="./img/screens/AdGenerator6_mobile.png"></span>
+                            <span class="desktopScreen"><img src="./img/screens/AdGenerator6.png"></span>
+                            <span class="tabletScreen"><img src="./img/screens/AdGenerator6.png"></span>
+                        </div>
+                        <div class="grp7">
+                            <span class="mobileScreen"><img src="./img/screens/AdGenerator7_mobile.png"></span>
+                            <span class="desktopScreen"><img src="./img/screens/AdGenerator7.png"></span>
+                            <span class="tabletScreen"><img src="./img/screens/AdGenerator7.png"></span>
+                        </div>
+                    </section>
+                    <section class="selfieXO">
+                        <div class="description">
+                            <h3>PayPal: <span>Hackathon Concept - Selfie Checkout</span></h3>
+                            <h4>User Experience Design</h4>
+                            <p>Hypothetical user flow for PayPal's "selfie checkout". A concept for cart checkout processes that uses a selfie for PayPal account association.</p>
+                            <p>Pages: &nbsp;<a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a></p>
+                        </div>
+                        <div class="grp1">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/thinkgeek_index.jpg"></span>
+                            <p>This flow starts on merchant sites with the PayPal purchasing buttons.</p>
+                        </div>
+                        <div class="grp2">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/selfieXO_1.jpg"></span>
+                            <p>If "selfie checkout" is enabled on the user's account, the user is prompted for camera access to take the photo.</p>
+                        </div>
+                        <div class="grp3">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/selfieXO_2.jpg"></span>
+                            <img class="profile" src="./img/screens/hackathon/selfieXO_2a.jpg">
+                            <img src="./img/screens/hackathon/selfieXO_2b.jpg">
+                            <img src="./img/screens/hackathon/selfieXO_2c.jpg">
+                            <img src="./img/screens/hackathon/selfieXO_2d.jpg">
+                            <p>Once camera is enabled, framing is overlaid on photo making it easier to get an accurate photo.<br>
+                                Progress meter surrounding camera view allows users to focus on keeping face in frame.</p>
+                        </div>
+                        <div class="grp4">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/selfieXO_3.jpg"></span>
+                            <p>Once an accurate photo is captured it is compared against a user's other profile pictures captured at time "selfie checkout" was enabled.</p>
+                        </div>
+                        <div class="grp5">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/selfieXO_4.jpg"></span>
+                            <p>PayPal purchase, shipping and funding instrument review screen.</p>
+                        </div>
+                        <div class="grp6">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/selfieXO_4a.jpg"></span>
+                            <p>Option to edit shipping details or funding instrument in sliding sidebar.</p>
+                        </div>
+                        <div class="grp7">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/thinkgeek_confirm.jpg"></span>
+                            <p>Returns user to merchant for purchase confirmation and receipt.</p>
+                        </div>
+                        <div class="grp8">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/selfieXO_3a.jpg"></span>
+                            <p>Sad path: Error on photo comparison mismatch.</p>
+                        </div>
+                        <div class="grp9">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/selfieXO_3_signin.jpg"></span>
+                            <p>Sad path: Traditional sign-in option available in error flow.</p>
+                        </div>
+                    </section>
+                    <section class="seamless">
+                        <div class="description">
+                            <h3>PayPal: <span>Hackathon Concept - Seamless Checkout</span></h3>
+                            <h4>User Experience Design</h4>
+                            <p>Hypothetical user flow for a merchant's seamless checkout with PayPal. Associated email is used to identify existing PayPal customers and overlay it's checkout process within the merchant experience.</p>
+                            <p>Pages: &nbsp;<a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a></p>
+                        </div>
+                        <div class="grp1">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/seamless.jpg"></span>
+                            <p>This flow starts on merchant sites with the PayPal purchasing buttons.</p>
+                        </div>
+                        <div class="grp2">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/seamless_2.jpg"></span>
+                            <p>If "selfie checkout" is enabled on the user's account, the user is prompted for camera access to take the photo.</p>
+                        </div>
+                        <div class="grp3">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/seamless_3.jpg"></span>
+                            <p>Once camera is enabled, framing is overlaid on photo making it easier to get an accurate photo.<br>
+                                Progress meter surrounding camera view allows users to focus on keeping face in frame.</p>
+                        </div>
+                        <div class="grp4">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/seamless_3a.jpg"></span>
+                            <p>Once an accurate photo is captured it is compared against a user's other profile pictures captured at time "selfie checkout" was enabled.</p>
+                        </div>
+                        <div class="grp5">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/seamless_3b.jpg"></span>
+                            <p>PayPal purchase, shipping and funding instrument review screen.</p>
+                        </div>
+                        <div class="grp6">
+                            <span class="desktopScreen"><img src="./img/screens/hackathon/seamless_4.jpg"></span>
+                            <p>PayPal purchase, shipping and funding instrument review screen.</p>
+                        </div>
+                    </section>
+                    <ul>
+                        <li class="selected">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+
+        <main class="main">
+            <div class="main-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="footer-list">
+                            <li><a href="http://dribbble.com/christiangrill">Dribbble</a></li>
+                            <li><a href="https://twitter.com/xchingrill">Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/in/christiangrill">LinkedIn</a></li>
+                            <li><a href="https://github.com/xchin">Github</a></li>
+                        </ul>
+                        <p><a href="@gmail.com||exchin" class="email-lnk">Hire me!</a> I'm good at what I do.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>© 2016 Christian Grill. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</footer>
+
+<script src="build/bundle.js"></script>
+</body>
 </html>

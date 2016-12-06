@@ -14,9 +14,9 @@ module.exports = Object.assign(commonConfig, {
     devtool: 'source-map',
     module: {
         loaders: commonConfig.module.loaders.concat({
-            test: /\.s?css$/,
+            test: /\.less$/,
             exclude: /(node_modules)/,
-            loader: extractCSS.extract('style', 'css?sourceMap!postcss?sourceMap!sass?sourceMap')
+            loader: extractCSS.extract('style', 'css?sourceMap!postcss?sourceMap!less?sourceMap')
         })
     },
     plugins: commonConfig.plugins.concat(extractCSS)

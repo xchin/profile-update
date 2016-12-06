@@ -1,0 +1,491 @@
+/*  MONISTER animations  */
+@keyframes redeye {
+  0% {
+  -webkit-filter: hue-rotate(0deg) contrast(none);
+  filter: hue-rotate(0deg) contrast(none);
+  }
+  30% {
+    -webkit-filter: hue-rotate(0deg) contrast(1);
+    filter: hue-rotate(0deg) contrast(1);
+  }
+  100% {
+    -webkit-filter: hue-rotate(320deg) contrast(2);
+    filter: hue-rotate(320deg) contrast(2);
+  }
+}
+@keyframes cleareye {
+  0% {
+    -webkit-filter: hue-rotate(320deg) contrast(2);
+    filter: hue-rotate(320deg) contrast(2);
+  }
+  30% {
+    -webkit-filter: hue-rotate(320deg) contrast(1);
+    filter: hue-rotate(320deg) contrast(1);
+  }
+  100% {
+    -webkit-filter: hue-rotate(0deg) contrast(none);
+    filter: hue-rotate(0deg) contrast(none);
+  }
+}
+
+@keyframes swingIt {
+  0% {
+  }
+  30% {
+  }
+  100% {
+  }
+}
+
+/* BUILD THE MONITSTER */
+.monster-wrap{
+  padding-top: 50px;
+  -webkit-animation:fadeIn .5s ease-in-out;
+  -moz-transition:fadeIn .5s ease-in-out;
+  -o-transition:fadeIn .5s ease-in-out;
+  transition:fadeIn .5s ease-in-out
+}
+#monster-skull{
+  position: absolute;
+  top: 162px;
+  left:  41%;
+  margin-left: 0;
+  max-width: 150px;
+  z-index: 980;
+  .eye {
+    width: 40px;
+    height: 34px;
+    margin: 6px 0 0 30px;
+    border-radius: 50%;
+    float: left;
+    cursor: none;
+    background: #fff;
+    .iris {
+      width:27px;
+      height:27px;
+      background:url(/img/monster/rightEye.png) top left no-repeat;
+      background-size: 85%;
+      &.red {
+        -webkit-animation: redeye .5s forwards;
+        animation: redeye .5s forwards;
+      }
+      &.clearEyes {
+        -webkit-animation: cleareye .5s forwards;
+        animation: cleareye .5s forwards;
+      }
+    }
+    &:last-child {
+      margin: 15px 0 0 10px;
+      .iris {
+        background:url(/img/monster/leftEye.png) top left no-repeat;
+        background-size: 85%;
+        &.red {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+#monster-body{
+  margin: 0 auto 0 22.5%;
+  position:  relative;
+  max-width:375px;
+  width: 85%;
+  z-index: 982;
+  img{
+    width: 80%;
+    margin: 0;
+  }
+}
+#monster-arm{
+  position: relative;
+  max-width: 130px;
+  width: 25%;
+  z-index: 984;
+  margin: -208px auto 0 69.4%;
+  img{
+    width: 90%;
+    margin: 0;
+  }
+  &.swingIt {
+    margin: -240px auto 0;
+    z-index: 981;
+    img {
+      margin: 0 0 32px 121px;
+      transform: rotate(90deg);
+      transform-origin: bottom left;
+    }
+  }
+}
+#monster-leg{
+  position: relative;
+  margin: -17.3% 0 15px 24%;
+  max-width: 120px;
+  width: 25%;
+  z-index: 979;
+  img{
+    width: 90%;
+    margin: 0;
+  }
+}
+#monster-toes{
+  position: relative;
+  max-width: 90px;
+  width: 20%;
+  z-index: 982;
+  margin: -16% 0 66px 25.3%;
+  img{
+    width: 81.5%;
+    margin: 0;
+  }
+}
+#airSpace {
+  margin: 0 auto;
+  width: 100%;
+  height: 70%;
+  border-radius: 200px;
+  display: block;
+  position:  absolute;
+  z-index: 998;
+  cursor: url(/img/cursor/biplane.png) default;
+}
+#kongFace {
+  margin: 0 auto;
+  max-width: 280px;
+  width: 70%;
+  height: 25%;
+  display: block;
+  position:  absolute;
+  left: 25%;
+  top: 25%;
+  z-index: 999;
+  -ms-transform: rotate(10deg); /* IE 9 */
+  -webkit-transform: rotate(10deg); /* Safari */
+  transform: rotate(10deg);
+}
+#kongSlap {
+  margin: 0 0 0 100px;
+  width: 80px;
+  height: 60px;
+  display: block;
+  position:  absolute;
+  top: 50%;
+  left: 40%;
+  z-index: 999;
+  -ms-transform: rotate(-40deg); /* IE 9 */
+  -webkit-transform: rotate(-40deg); /* Safari */
+  transform: rotate(-40deg);
+}
+.easeAnime {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+@media (min-width: 420px) {
+  .monster-wrap {
+    padding-top: 35px;
+  }
+  #monster-body {
+    margin: 0 0 0 19.7%;
+  }
+  #monster-arm {
+    margin: -218px auto 0 66.5%
+  }
+  #monster-leg {
+    margin: -18% 0 15px 20.5%;
+  }
+  #monster-toes{
+    margin: -14% 0 66px 22.4%;
+  }
+  #kongFace {
+    left: 21%;
+    top: 20%;
+  }
+}
+@media (min-width: 440px) {
+  .monster-wrap {
+    padding-top: 55px;
+  }
+  #monster-body {
+    margin: 0 0 0 18.5%;
+    width: 75%;
+  }
+  #monster-arm {
+    margin: -213px auto 0 59.8%;
+  }
+  #monster-leg {
+    margin: -15.5% 0 15px 19%;
+    width: 22%;
+  }
+  #monster-toes{
+    margin: -13.3% 0 66px 20.4%;
+    width: 18%;
+  }
+}
+@media (min-width: 460px) {
+  .monster-wrap {
+    padding-top: 45px;
+  }
+  #monster-body {
+    margin: 0 0 0 16%;
+  }
+  #monster-arm {
+    margin: -224px auto 0 57.6%;
+  }
+  #monster-leg {
+    width: 22%;
+    margin: -15.5% 0 15px 16.5%;
+  }
+  #monster-toes{
+    margin: -13.5% 0 66px 18.1%
+  }
+}
+@media (min-width: 480px) {
+  .monster-wrap {
+    padding-top: 35px;
+  }
+  #monster-body {
+    margin: 0 auto 0 13.5%;
+  }
+  #monster-arm {
+    margin: -234px auto 0 55%
+  }
+  #monster-leg {
+    margin: -15.5% 0 15px 14.5%;
+  }
+  #monster-toes{
+    margin: -13% 0 66px 16.5%;
+    width: 16.5%;
+  }
+  #kongFace {
+    left: 18%;
+  }
+  #kongSlap {
+    top: 37%;
+    left: 50%;
+  }
+}
+@media (min-width: 500px) {
+  #monster-body {
+    margin: 0 auto 0 12%;
+    width: 72%;
+  }
+  #monster-arm {
+    margin: -238px auto 0 51.8%;
+  }
+  #monster-leg {
+    margin: -15.5% 0 15px 12.5%;
+  }
+  #monster-toes{
+    margin: -13.3% 0 66px 14.6%;
+  }
+}
+@media (min-width: 520px) {
+  #monster-body {
+    margin: 0 auto 0 10.5%;
+    width: 70%;
+  }
+  #monster-arm {
+    margin: -232px auto 0 49.5%;
+    width: 22%;
+  }
+  #monster-leg {
+    margin: -13.8% 0 15px 11%;
+    width: 20%;
+  }
+  #monster-toes{
+    margin: -12.5% 0 66px 13%;
+    width: 16%;
+  }
+}
+@media (min-width: 540px) {
+  #monster-body {
+    margin: 0 auto 0 9.3%;
+    width: 66%;
+  }
+  #monster-arm {
+    margin: -232px auto 0 45.8%;
+  }
+  #monster-leg {
+    margin: -14.2% 0 15px 9.2%;
+  }
+  #monster-toes{
+    margin: -12% 0 66px 11.7%;
+    width: 15%;
+  }
+}
+@media (min-width: 560px) {
+  .monster-wrap {
+    padding-top: 40px;
+  }
+  #monster {
+    margin-left: 0;
+  }
+  #monster-skull {
+    top: 167px;
+    left: 50%;
+    margin-left: 47px;
+    max-width: 160px;
+    .eye {
+      width: 44px;
+      height: 35px;
+      margin: 4px 0 0 16px;
+      .iris {
+        width: 27px;
+        height: 27px;
+        background-size: 100%;
+      }
+      &:last-child {
+        margin: 15px 0 0 15px;
+        .iris {
+          background-size: 100%;
+          &.red {
+            margin-top: -2px;
+          }
+        }
+      }
+    }
+  }
+
+  #monster-body {
+    margin:0 auto;
+    // width: 75%;
+    img {
+      // width: 80%;
+      margin: 10px 0 0 138px;
+    }
+  }
+
+  #monster-arm {
+    width: 25%;
+    margin: -242px auto 0;
+    img {
+      width: 80%;
+      margin: 0 0 0 222px;
+    }
+    &.swingIt {
+      margin: -280px auto 0;
+      img {
+        margin: 0 0 38px 218px;
+      }
+    }
+  }
+
+  #monster-leg {
+    margin: 15px auto;
+    width: 25%;
+    img {
+      width: 80%;
+      margin: -92px 0 0 15px;
+    }
+  }
+
+  #monster-toes {
+    margin: -100px auto 60px;
+    width: 17%;
+    img {
+      width: 78%;
+      margin: 30px 0 0 9px;
+    }
+  }
+  #kongFace {
+    left: 48%;
+  }
+
+  #kongSlap {
+    margin: 0 0 0 200px;
+    width: 100px;
+    height: 80px;
+  }
+}
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+  .monster-wrap {
+    padding-top: 40px;
+  }
+  #monster-skull {
+    top: 155px;
+    left: 30%;
+  }
+  #monster-body {
+    margin: 0 auto 0 6.5%;
+    width: 100%;
+    img {
+      width: 85%;
+    }
+  }
+  #monster-arm {
+    margin: -222px auto 0 65.4%;
+    width: 30%;
+    img {
+      width: 100%;
+    }
+  }
+  #monster-leg {
+    margin: -21.5% 0 15px 7%;
+    width: 28%;
+    img {
+      width: 100%;
+    }
+  }
+  #monster-toes{
+    margin: -18.5% 0 66px 10%;
+    width: 20%;
+    img {
+      width: 100%;
+    }
+  }
+}
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+  #monster-skull {
+    left: 33.5%;
+  }
+  #monster-body{
+    margin: 0 auto 0 13.4%;
+    width: 85%;
+  }
+  #monster-arm{
+    width: 25%;
+    margin: -220px auto 0 63.5%;
+    &.swingIt {
+      margin: -240px auto 0;
+      img {
+        margin: 0 0 32px 121px;
+      }
+    }
+  }
+  #monster-leg{
+    margin: -19.5% 0 15px 13%;
+    width: 25%;
+  }
+  #monster-toes{
+    width: 17.5%;
+    margin: -17% 0 66px 16.2%;
+  }
+}
+@media (min-width:992px) {
+  .monster-wrap {
+    padding-top: 130px;
+  }
+  #monster-arm{
+    margin: -242px auto 0;
+    img{
+      margin: 0 0 0 222px;
+    }
+    &.swingIt {
+      margin: -280px auto 0;
+      img {
+        margin: 0 0 38px 218px;
+      }
+    }
+  }
+  #kongSlap {
+    // margin-top: 290px;
+  }
+}

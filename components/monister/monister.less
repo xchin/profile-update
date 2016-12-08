@@ -39,7 +39,11 @@
 
 /* BUILD THE MONITSTER */
 .monster-wrap{
-  padding-top: 50px;
+  position: relative;
+  top: 42px;
+  left: 0;
+  max-width: 310px;
+  margin: 0 26.4% 0 auto;
   -webkit-animation:fadeIn .5s ease-in-out;
   -moz-transition:fadeIn .5s ease-in-out;
   -o-transition:fadeIn .5s ease-in-out;
@@ -47,8 +51,8 @@
 }
 #monster-skull{
   position: absolute;
-  top: 162px;
-  left:  41%;
+  top: 22px;
+  left: 148px;
   margin-left: 0;
   max-width: 150px;
   z-index: 980;
@@ -75,7 +79,7 @@
       }
     }
     &:last-child {
-      margin: 15px 0 0 10px;
+      margin: 16px 0 0 11px;
       .iris {
         background:url(/img/monster/leftEye.png) top left no-repeat;
         background-size: 85%;
@@ -86,32 +90,39 @@
     }
   }
 }
+#monster {
+  margin-bottom: -280px;
+}
 #monster-body{
-  margin: 0 auto 0 22.5%;
   position:  relative;
+  top: 0;
+  left: 78px;
   max-width:375px;
   width: 85%;
   z-index: 982;
   img{
-    width: 80%;
+    width: 100%;
     margin: 0;
   }
 }
 #monster-arm{
   position: relative;
   max-width: 130px;
-  width: 25%;
+  top: -214px;
+  left: 259px;
+  width: 30%;
   z-index: 984;
-  margin: -208px auto 0 69.4%;
   img{
-    width: 90%;
+    width: 100%;
     margin: 0;
   }
   &.swingIt {
-    margin: -240px auto 0;
+    margin: 0;
+    top: -247px;
+    left: 256px;
     z-index: 981;
     img {
-      margin: 0 0 32px 121px;
+      margin: 0;
       transform: rotate(90deg);
       transform-origin: bottom left;
     }
@@ -119,23 +130,25 @@
 }
 #monster-leg{
   position: relative;
-  margin: -17.3% 0 15px 24%;
+  top: -286px;
+  left: 78px;
   max-width: 120px;
-  width: 25%;
+  width: 30%;
   z-index: 979;
   img{
-    width: 90%;
+    width: 100%;
     margin: 0;
   }
 }
 #monster-toes{
   position: relative;
+  top: -330px;
+  left: 88px;
   max-width: 90px;
   width: 20%;
   z-index: 982;
-  margin: -16% 0 66px 25.3%;
   img{
-    width: 81.5%;
+    width: 100%;
     margin: 0;
   }
 }
@@ -150,27 +163,27 @@
   cursor: url(/img/cursor/biplane.png) default;
 }
 #kongFace {
-  margin: 0 auto;
+  margin: 0 0 0 20%;
   max-width: 280px;
   width: 70%;
-  height: 25%;
+  height: 30%;
   display: block;
   position:  absolute;
-  left: 25%;
-  top: 25%;
+  top: 140px;
+  left: -7%;
   z-index: 999;
   -ms-transform: rotate(10deg); /* IE 9 */
   -webkit-transform: rotate(10deg); /* Safari */
   transform: rotate(10deg);
 }
 #kongSlap {
-  margin: 0 0 0 100px;
-  width: 80px;
-  height: 60px;
+  margin: 0;
+  width: 120px;
+  height: 75px;
   display: block;
   position:  absolute;
-  top: 50%;
-  left: 40%;
+  top: 275px;
+  left: 64%;
   z-index: 999;
   -ms-transform: rotate(-40deg); /* IE 9 */
   -webkit-transform: rotate(-40deg); /* Safari */
@@ -180,312 +193,202 @@
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
+@media (min-width: 320px) {
+  .monster-wrap {
+    margin: -3px 0 30px -17.2%;
+  }
+}
+@media (min-width: 360px) {
+  .monster-wrap {
+    margin: -3px 0 30px -15.8%;
+  }
+}
+@media (min-width: 375px) {
+  .monster-wrap {
+    margin: -3px 0 30px -12%;
+  }
+}
+@media (min-width: 410px) {
+  .monster-wrap {
+    margin: 0 0 30px -7.3%;
+  }
+}
+@media (min-width: 412px) {
+  .monster-wrap {
+    margin: -3px 0 30px -3.6%;
+  }
+}
+@media (min-width: 414px) {
+  .monster-wrap {
+    margin: -3px 0 30px -3.3%;
+  }
+}
 @media (min-width: 420px) {
   .monster-wrap {
-    padding-top: 35px;
-  }
-  #monster-body {
-    margin: 0 0 0 19.7%;
-  }
-  #monster-arm {
-    margin: -218px auto 0 66.5%
-  }
-  #monster-leg {
-    margin: -18% 0 15px 20.5%;
-  }
-  #monster-toes{
-    margin: -14% 0 66px 22.4%;
+    margin: -3px 0 30px -5.1%;
   }
   #kongFace {
-    left: 21%;
-    top: 20%;
+    margin: 0 0 0 27%;
+    width: 70%;
+  }
+}
+@media (min-width: 425px) {
+  .monster-wrap {
+    margin: -3px 0 30px -1.1%;
+  }
+}
+@media (min-width: 430px) {
+  .monster-wrap {
+    margin: 0 0 30px -3.1%;
   }
 }
 @media (min-width: 440px) {
   .monster-wrap {
-    padding-top: 55px;
+    margin: 0 0 30px -1.1%;
   }
-  #monster-body {
-    margin: 0 0 0 18.5%;
-    width: 75%;
-  }
-  #monster-arm {
-    margin: -213px auto 0 59.8%;
-  }
-  #monster-leg {
-    margin: -15.5% 0 15px 19%;
-    width: 22%;
-  }
-  #monster-toes{
-    margin: -13.3% 0 66px 20.4%;
-    width: 18%;
+}
+@media (min-width: 450px) {
+  .monster-wrap {
+    margin: 0 0 30px .8%;
   }
 }
 @media (min-width: 460px) {
   .monster-wrap {
-    padding-top: 45px;
+    margin: 0 0 30px 2.5%;
   }
-  #monster-body {
-    margin: 0 0 0 16%;
-  }
-  #monster-arm {
-    margin: -224px auto 0 57.6%;
-  }
-  #monster-leg {
-    width: 22%;
-    margin: -15.5% 0 15px 16.5%;
-  }
-  #monster-toes{
-    margin: -13.5% 0 66px 18.1%
+}
+@media (min-width: 470px) {
+  .monster-wrap {
+    margin: 0 0 30px 4.1%;
   }
 }
 @media (min-width: 480px) {
   .monster-wrap {
-    padding-top: 35px;
+    margin: 0 0 30px 5.8%;
   }
-  #monster-body {
-    margin: 0 auto 0 13.5%;
-  }
-  #monster-arm {
-    margin: -234px auto 0 55%
-  }
-  #monster-leg {
-    margin: -15.5% 0 15px 14.5%;
-  }
-  #monster-toes{
-    margin: -13% 0 66px 16.5%;
-    width: 16.5%;
-  }
-  #kongFace {
-    left: 18%;
-  }
-  #kongSlap {
-    top: 37%;
-    left: 50%;
+}
+@media (min-width: 490px) {
+  .monster-wrap {
+    margin: 0 0 30px 7.4%;
   }
 }
 @media (min-width: 500px) {
-  #monster-body {
-    margin: 0 auto 0 12%;
-    width: 72%;
+  .monster-wrap {
+    margin: -3px 27.3% 30px auto;
   }
-  #monster-arm {
-    margin: -238px auto 0 51.8%;
-  }
-  #monster-leg {
-    margin: -15.5% 0 15px 12.5%;
-  }
-  #monster-toes{
-    margin: -13.3% 0 66px 14.6%;
+}
+@media (min-width: 510px) {
+  .monster-wrap {
+    margin: -3px 27.1% 30px auto;
   }
 }
 @media (min-width: 520px) {
-  #monster-body {
-    margin: 0 auto 0 10.5%;
-    width: 70%;
+  .monster-wrap {
+    margin: -3px 26.9% 30px auto;
   }
-  #monster-arm {
-    margin: -232px auto 0 49.5%;
-    width: 22%;
-  }
-  #monster-leg {
-    margin: -13.8% 0 15px 11%;
-    width: 20%;
-  }
-  #monster-toes{
-    margin: -12.5% 0 66px 13%;
-    width: 16%;
+}
+@media (min-width: 530px) {
+  .monster-wrap {
+    margin: -3px 26.8% 30px auto;
   }
 }
 @media (min-width: 540px) {
-  #monster-body {
-    margin: 0 auto 0 9.3%;
-    width: 66%;
+  .monster-wrap {
+    margin: -3px 26.7% 30px auto;
   }
-  #monster-arm {
-    margin: -232px auto 0 45.8%;
-  }
-  #monster-leg {
-    margin: -14.2% 0 15px 9.2%;
-  }
-  #monster-toes{
-    margin: -12% 0 66px 11.7%;
-    width: 15%;
+}
+@media (min-width: 550px) {
+  .monster-wrap {
+    margin: 0 26.6% 30px auto;
   }
 }
 @media (min-width: 560px) {
-  .monster-wrap {
-    padding-top: 40px;
-  }
   #monster {
-    margin-left: 0;
+    margin-bottom: -280px;
   }
-  #monster-skull {
-    top: 167px;
-    left: 50%;
-    margin-left: 47px;
-    max-width: 160px;
+  #monster-skull{
+    top: 28px;
+    left: 165px;
+    max-width: 150px;
     .eye {
-      width: 44px;
-      height: 35px;
-      margin: 4px 0 0 16px;
+      width: 40px;
+      height: 34px;
+      margin: 6px 0 0 30px;
       .iris {
-        width: 27px;
-        height: 27px;
-        background-size: 100%;
+        width:27px;
+        height:27px;
+        background-size: 85%;
       }
       &:last-child {
-        margin: 15px 0 0 15px;
+        margin: 17px 0 0 17px;
         .iris {
-          background-size: 100%;
+          background-size: 85%;
           &.red {
-            margin-top: -2px;
+            margin-top: 0;
           }
         }
       }
     }
   }
-
-  #monster-body {
-    margin:0 auto;
-    // width: 75%;
-    img {
-      // width: 80%;
-      margin: 10px 0 0 138px;
-    }
+  .monster-wrap {
+    max-width: 350px;
+    margin: 0 20.1% 0 auto;
   }
-
   #monster-arm {
-    width: 25%;
-    margin: -242px auto 0;
-    img {
-      width: 80%;
-      margin: 0 0 0 222px;
-    }
+    top: -242px;
+    left: 283px;
     &.swingIt {
-      margin: -280px auto 0;
-      img {
-        margin: 0 0 38px 218px;
-      }
+      top: -278px;
+      left: 278px;
     }
   }
-
   #monster-leg {
-    margin: 15px auto;
-    width: 25%;
-    img {
-      width: 80%;
-      margin: -92px 0 0 15px;
-    }
+    top: -327px;
   }
-
   #monster-toes {
-    margin: -100px auto 60px;
-    width: 17%;
-    img {
-      width: 78%;
-      margin: 30px 0 0 9px;
-    }
+    top: -377px;
+    left: 90px;
+  }
+  #kongFace {
+    left: 0;
+    margin: 0 0 0 40%;
+    width: 70%;
+    height: 25%;
+  }
+  #kongSlap {
+    left: 75%;
+  }
+}
+
+@media (min-width: 766px) {
+  #kongSlap {
+    left: 70%;
+  }
+  .monster-wrap {
+    left: 49px;
+    margin: 0 auto;
   }
   #kongFace {
     left: 48%;
+    margin: 0 auto;
   }
+}
 
-  #kongSlap {
-    margin: 0 0 0 200px;
-    width: 100px;
-    height: 80px;
-  }
-}
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: portrait) {
-  .monster-wrap {
-    padding-top: 40px;
-  }
-  #monster-skull {
-    top: 155px;
-    left: 30%;
-  }
-  #monster-body {
-    margin: 0 auto 0 6.5%;
-    width: 100%;
-    img {
-      width: 85%;
-    }
-  }
-  #monster-arm {
-    margin: -222px auto 0 65.4%;
-    width: 30%;
-    img {
-      width: 100%;
-    }
-  }
-  #monster-leg {
-    margin: -21.5% 0 15px 7%;
-    width: 28%;
-    img {
-      width: 100%;
-    }
-  }
-  #monster-toes{
-    margin: -18.5% 0 66px 10%;
-    width: 20%;
-    img {
-      width: 100%;
-    }
-  }
-}
-@media only screen
-and (min-device-width: 375px)
-and (max-device-width: 667px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: portrait) {
-  #monster-skull {
-    left: 33.5%;
-  }
-  #monster-body{
-    margin: 0 auto 0 13.4%;
-    width: 85%;
-  }
-  #monster-arm{
-    width: 25%;
-    margin: -220px auto 0 63.5%;
-    &.swingIt {
-      margin: -240px auto 0;
-      img {
-        margin: 0 0 32px 121px;
-      }
-    }
-  }
-  #monster-leg{
-    margin: -19.5% 0 15px 13%;
-    width: 25%;
-  }
-  #monster-toes{
-    width: 17.5%;
-    margin: -17% 0 66px 16.2%;
-  }
-}
 @media (min-width:992px) {
-  .monster-wrap {
-    padding-top: 130px;
-  }
-  #monster-arm{
-    margin: -242px auto 0;
-    img{
-      margin: 0 0 0 222px;
-    }
-    &.swingIt {
-      margin: -280px auto 0;
-      img {
-        margin: 0 0 38px 218px;
-      }
-    }
-  }
   #kongSlap {
-    // margin-top: 290px;
+    left: 68%;
+  }
+  #monster {
+    margin-bottom: -220px;
+  }
+  .monster-wrap {
+    top: 130px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width:1200px) {
+  #kongSlap {
+    left: 64%;
   }
 }

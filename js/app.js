@@ -49,6 +49,12 @@ $(function() {
         triggerOnce: true
     });
 });
+
+function tabSetter() {
+    $('#workStage a').attr('tabindex', -1);
+    $('#workStage .opaque a').attr('tabindex', 0);
+};
+tabSetter();
 // Project gallery navigation
 $(function() {
     $('#workStage ul').on('click', 'li', function() {
@@ -56,10 +62,15 @@ $(function() {
         var idx = $('#workStage section').eq(newSlide);
 
         // Resetting, swapping and blocking
-        $('#workStage section').removeClass('opaque');
-        $(idx).addClass('opaque');
-        $('#workStage ul li').removeClass('selected');
-        $(this).addClass('selected');
+        $('#workStage section').removeClass('opaque').attr('aria-hidden', 'true').children('a').attr('tabindex', -1);
+        $(idx).addClass('opaque').attr('aria-hidden', 'false');
+        tabSetter();
+        $('#workStage ul li').removeClass('selected').attr({
+            'aria-selected': 'false'
+        });
+        $(this).addClass('selected').attr({
+            'aria-selected': 'true'
+        });
         $('#workStage section p a').removeClass('active');
         $('#workStage section').find('p a:contains("Scroll")').next('a').addClass('active');
         $('#workStage .ppcc p a:first-child').removeClass('strike-thru');
@@ -105,7 +116,24 @@ $(function() {
 });
 
 
-// Project screen animations
+
+if ($('a.scroll').is(':focus')){
+    console.log("Boom!");
+}
+
+
+/* $( "a.scroll" ).focus(function() {
+    console.log("Boom!");
+    $(function() {
+        $('#workStage .ppgf .grp1 .mobileScreen img').stop().animate({top: '-6.5%'}, 500);
+        $('#workStage .ppgf .grp1 .tabletScreen img').stop().animate({top: '-60%'}, 1000);
+        $('#workStage .ppgf .grp2 .mobileScreen img').stop().animate({top: '-56%'}, 2000);
+        $('#workStage .ppgf .grp2 .desktopScreen img').stop().animate({top: '-141%'}, 2000);
+        $('#workStage .ppgf .grp2 .tabletScreen img').stop().animate({top: '-227%'}, 2000);
+    })
+}); */
+
+// Project screen animations, includes .focus for tabbed navigation
 $(function() {
     $('#workStage .ppgf p a:first-child').mouseenter(
         function () {
@@ -113,14 +141,14 @@ $(function() {
             $('#workStage .ppgf .grp1 .tabletScreen img').stop().animate({top: '-60%'}, 1000);
             $('#workStage .ppgf .grp2 .mobileScreen img').stop().animate({top: '-56%'}, 2000);
             $('#workStage .ppgf .grp2 .desktopScreen img').stop().animate({top: '-141%'}, 2000);
-            $('#workStage .ppgf .grp2 .tabletScreen img').stop().animate({top: '-229%'}, 2000);
+            $('#workStage .ppgf .grp2 .tabletScreen img').stop().animate({top: '-227%'}, 2000);
         }
     );
     $('#workStage .ppgf2 p a').mouseenter(
         function () {
             $('#workStage .ppgf2 .mobileScreen img').stop().animate({top: '-402%'}, 2500);
             $('#workStage .ppgf2 .desktopScreen img').stop().animate({top: '-145%'}, 2500);
-            $('#workStage .ppgf2 .tabletScreen img').stop().animate({top: '-336%'}, 2500);
+            $('#workStage .ppgf2 .tabletScreen img').stop().animate({top: '-333.5%'}, 2500);
         }
     );
     $('#workStage .p2p p a:first-child').mouseenter(
@@ -143,15 +171,15 @@ $(function() {
     $('#workStage .dtc p a').mouseenter(
         function () {
             $('#workStage .dtc .mobileScreen img').stop().animate({top: '-433%'}, 4000);
-            $('#workStage .dtc .desktopScreen img').stop().animate({top: '-326%'}, 4000);
-            $('#workStage .dtc .tabletScreen img').stop().animate({top: '-578%'}, 4000);
+            $('#workStage .dtc .desktopScreen img').stop().animate({top: '-323%'}, 4000);
+            $('#workStage .dtc .tabletScreen img').stop().animate({top: '-575%'}, 4000);
         }
     );
     $('#workStage .ppcc p a:first-child').mouseenter(
         function () {
             $('#workStage .ppcc .grp1 .mobileScreen img').stop().animate({top: '-223%'}, 2000);
-            $('#workStage .ppcc .grp1 .desktopScreen img').stop().animate({top: '-223%'}, 2000);
-            $('#workStage .ppcc .grp1 .tabletScreen img').stop().animate({top: '-408%'}, 2000);
+            $('#workStage .ppcc .grp1 .desktopScreen img').stop().animate({top: '-221%'}, 2000);
+            $('#workStage .ppcc .grp1 .tabletScreen img').stop().animate({top: '-406%'}, 2000);
             $('#workStage .ppcc .grp2 .mobileScreen img').stop().animate({top: '-140%'}, 1000);
             $('#workStage .ppcc .grp2 .desktopScreen img').stop().animate({top: '-58%'}, 1000);
             $('#workStage .ppcc .grp2 .tabletScreen img').stop().animate({top: '-173%'}, 1000);

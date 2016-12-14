@@ -38,7 +38,7 @@
 }
 
 /* BUILD THE MONITSTER */
-.monster-wrap{
+.monsterWrap{
   position: relative;
   top: 42px;
   left: 0;
@@ -49,14 +49,14 @@
   -o-transition:fadeIn .5s ease-in-out;
   transition:fadeIn .5s ease-in-out
 }
-#monster-skull{
+#monsterWrap__eyes{
   position: absolute;
   top: 22px;
   left: 148px;
   margin-left: 0;
   max-width: 150px;
   z-index: 980;
-  .eye {
+  .monsterWrap__eye {
     width: 40px;
     height: 34px;
     margin: 6px 0 0 30px;
@@ -64,7 +64,7 @@
     float: left;
     cursor: none;
     background: #fff;
-    .iris {
+    .monsterWrap__iris {
       width:27px;
       height:27px;
       background:url(/img/monster/rightEye.png) top left no-repeat;
@@ -80,7 +80,7 @@
     }
     &:last-child {
       margin: 16px 0 0 11px;
-      .iris {
+      .monsterWrap__iris {
         background:url(/img/monster/leftEye.png) top left no-repeat;
         background-size: 85%;
         &.red {
@@ -90,10 +90,10 @@
     }
   }
 }
-#monster {
+#monsterWrap__monster{
   margin-bottom: -280px;
 }
-#monster-body{
+#monsterWrap__body{
   position:  relative;
   top: 0;
   left: 78px;
@@ -105,7 +105,7 @@
     margin: 0;
   }
 }
-#monster-arm{
+#monsterWrap__arm{
   position: relative;
   max-width: 130px;
   top: -214px;
@@ -128,7 +128,7 @@
     }
   }
 }
-#monster-leg{
+#monsterWrap__leg{
   position: relative;
   top: -286px;
   left: 78px;
@@ -140,7 +140,7 @@
     margin: 0;
   }
 }
-#monster-toes{
+#monsterWrap__toes{
   position: relative;
   top: -330px;
   left: 88px;
@@ -194,37 +194,42 @@
   transition: all .5s ease-in-out;
 }
 @media (min-width: 320px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 0 30px -17.2%;
   }
 }
 @media (min-width: 360px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 0 30px -15.8%;
   }
 }
 @media (min-width: 375px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 0 30px -12%;
   }
 }
+@media (min-width: 400px) {
+  .monsterWrap {
+    margin: -3px 0 30px -9.5%;
+  }
+}
 @media (min-width: 410px) {
-  .monster-wrap {
-    margin: 0 0 30px -7.3%;
+  .monsterWrap {
+    margin: -3px 0 30px -7.3%;
   }
 }
 @media (min-width: 412px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 0 30px -3.6%;
   }
 }
 @media (min-width: 414px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 0 30px -3.3%;
   }
 }
 @media (min-width: 420px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 0 30px -5.1%;
   }
   #kongFace {
@@ -233,95 +238,95 @@
   }
 }
 @media (min-width: 425px) {
-  .monster-wrap {
-    margin: -3px 0 30px -1.1%;
+  .monsterWrap {
+    margin: 0 0 30px -1.1%;
   }
 }
 @media (min-width: 430px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: 0 0 30px -3.1%;
   }
 }
 @media (min-width: 440px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: 0 0 30px -1.1%;
   }
 }
 @media (min-width: 450px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: 0 0 30px .8%;
   }
 }
 @media (min-width: 460px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: 0 0 30px 2.5%;
   }
 }
 @media (min-width: 470px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: 0 0 30px 4.1%;
   }
 }
 @media (min-width: 480px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: 0 0 30px 5.8%;
   }
 }
 @media (min-width: 490px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: 0 0 30px 7.4%;
   }
 }
 @media (min-width: 500px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 27.3% 30px auto;
   }
 }
 @media (min-width: 510px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 27.1% 30px auto;
   }
 }
 @media (min-width: 520px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 26.9% 30px auto;
   }
 }
 @media (min-width: 530px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 26.8% 30px auto;
   }
 }
 @media (min-width: 540px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: -3px 26.7% 30px auto;
   }
 }
 @media (min-width: 550px) {
-  .monster-wrap {
+  .monsterWrap {
     margin: 0 26.6% 30px auto;
   }
 }
 @media (min-width: 560px) {
-  #monster {
+  #monsterWrap__monster{
     margin-bottom: -280px;
   }
-  #monster-skull{
+  #monsterWrap__eyes{
     top: 28px;
     left: 165px;
     max-width: 150px;
-    .eye {
+    .monsterWrap__eye {
       width: 40px;
       height: 34px;
       margin: 6px 0 0 30px;
-      .iris {
+      .monsterWrap__iris {
         width:27px;
         height:27px;
         background-size: 85%;
       }
       &:last-child {
         margin: 17px 0 0 17px;
-        .iris {
+        .monsterWrap__iris {
           background-size: 85%;
           &.red {
             margin-top: 0;
@@ -330,11 +335,11 @@
       }
     }
   }
-  .monster-wrap {
+  .monsterWrap {
     max-width: 350px;
     margin: 0 20.1% 0 auto;
   }
-  #monster-arm {
+  #monsterWrap__arm {
     top: -242px;
     left: 283px;
     &.swingIt {
@@ -342,10 +347,10 @@
       left: 278px;
     }
   }
-  #monster-leg {
+  #monsterWrap__leg {
     top: -327px;
   }
-  #monster-toes {
+  #monsterWrap__toes {
     top: -377px;
     left: 90px;
   }
@@ -364,7 +369,7 @@
   #kongSlap {
     left: 70%;
   }
-  .monster-wrap {
+  .monsterWrap {
     left: 49px;
     margin: 0 auto;
   }
@@ -378,10 +383,10 @@
   #kongSlap {
     left: 68%;
   }
-  #monster {
+  #monsterWrap__monster{
     margin-bottom: -220px;
   }
-  .monster-wrap {
+  .monsterWrap {
     top: 130px;
     margin: 0 auto;
   }

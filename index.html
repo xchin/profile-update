@@ -21,8 +21,8 @@
     <link rel="stylesheet" type="text/css" href="build/style.css" />
 </head>
 
-<body class="">
-<section id="bldg"><img src="./img/empireBldg_2.png"></section>
+<body>
+<section id="empireBldg"><img src="./img/empireBldg_2.png"></section>
 <section id="top">
     <header id="home-top" class="nav-top nav-fixed nav-root">
         <div class="container">
@@ -30,14 +30,15 @@
                 <div class="col-md-6 col-xs-6">
                     <h1 id="header-logo" class="image-text">
                         <a href="/">
+                            CTGrill.com
                             <img src="/img/logo/ctgrillLogo.png">
                         </a>
                     </h1>
                 </div>
                 <div class="col-md-6 col-xs-6">
-                    <nav id="top-nav">
-                        <ul class="nav-list transistion">
-                            <li><a class="active" href="index.html">Me</a></li>
+                    <nav id="top-nav" role="navigation">
+                        <ul class="nav-list">
+                            <li><a id="scrollTo-me" class="active" href="#me">Me</a></li>
                             <li><a id="scrollTo-myWork" href="#work">My Work</a></li>
                         </ul>
                     </nav>
@@ -45,35 +46,35 @@
             </div>
         </div>
     </header>
-    <div id="airSpace"></div>
-    <div id="kongFace"></div>
-    <div id="kongSlap"></div>
-    <div class="monster-wrap">
-        <div id="monster-skull">
-            <div class="eye">
-                <div class="iris"></div>
+    <div id="airSpace" role="presentation"></div>
+    <div id="kongFace" role="presentation"></div>
+    <div id="kongSlap" role="presentation"></div>
+    <div class="monsterWrap" role="presentation">
+        <div id="monsterWrap__eyes">
+            <div class="monsterWrap__eye">
+                <div class="monsterWrap__iris"></div>
             </div>
-            <div class="eye">
-                <div class="iris"></div>
+            <div class="monsterWrap__eye">
+                <div class="monsterWrap__iris"></div>
             </div>
         </div>
-        <div id="monster">
-            <div id="monster-body">
+        <div id="monsterWrap__monster">
+            <div id="monsterWrap__body">
                 <img src="./img/monster/monster.png">
             </div>
-            <div id="monster-arm">
+            <div id="monsterWrap__arm">
                 <img src="./img/monster/monsterArm.png">
             </div>
-            <div id="monster-leg">
+            <div id="monsterWrap__leg">
                 <img src="./img/monster/monsterLeg.png">
             </div>
-            <div id="monster-toes">
+            <div id="monsterWrap__toes">
                 <img src="./img/monster/monsterToes.png">
             </div>
         </div>
     </div>
 </section>
-<section id="me">
+<section id="me" role="main">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -93,9 +94,7 @@
                                 <p>Logos and iconography.<br>Simple wireframes or detailed style guides.<br>Paper prototypes to full page layouts<br>and component interactions.<br>You name it, I've done it.</p>
                             </div>
                         </div>
-                        <div class="col-md-4">
-
-                        </div>
+                        <div class="col-md-4"></div>
                         <div class="col-md-4">
                             <div class="home-dev-info">
                                 <div class="bubble left">
@@ -131,15 +130,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <article>
-                    <header>
-                        <h2>My work</h2>
-                        <h3>A collection of some of the projects I've done.</h3>
-                    </header>
-                </article>
-                <div id="workStage">
-                    <div id="devices"></div>
-                    <section class="ppgf opaque">
+                <div id="workStage" data-ride="carousel" data-wrap="false" data-interval="false" role="complementary" aria-labelledby="portfolio" aria-describedby="portfolio_desc">
+                    <article>
+                        <header>
+                            <h2 id="portfolio">My work</h2>
+                            <h3 id="portfolio_desc">A collection of some of the projects I've done.</h3>
+                        </header>
+                    </article>
+                    <div id="devices" role="presentation"></div>
+                    <section class="ppgf opaque" role="tabpanel" id="tabpanel-0-0" aria-labelledby="tab-0-0" aria-hidden="false">
                         <div class="description">
                             <h3>PayPal Giving Fund: <span>Campaign update dashboard</span></h3>
                             <h4>Design &amp; Front-end Development</h4>
@@ -157,7 +156,7 @@
                             <span class="tabletScreen"><img src="./img/screens/projScreens_PP_tablet_2.jpg"></span>
                         </div>
                     </section>
-                    <section class="ppgf2">
+                    <section class="ppgf2" role="tabpanel" id="tabpanel-0-1" aria-labelledby="tab-0-1" aria-hidden="true">
                         <div class="description">
                             <h3>PayPal Giving Fund: <span>Rapid response template</span></h3>
                             <h4>Design &amp; Front-end Development</h4>
@@ -168,7 +167,7 @@
                         <span class="desktopScreen"><img src="./img/screens/projScreens_PP_3.jpg"></span>
                         <span class="tabletScreen"><img src="./img/screens/projScreens_PP_tablet_3.jpg"></span>
                     </section>
-                    <section class="p2p">
+                    <section class="p2p" role="tabpanel" id="tabpanel-0-2" aria-labelledby="tab-0-2" aria-hidden="true">
                         <div class="description">
                             <h3>PayPal: <span>Revised donation flow</span></h3>
                             <h4>Design &amp; Front-end Development</h4>
@@ -206,7 +205,7 @@
                             <span class="tabletScreen"><img src="./img/screens/projScreens_P2P_tablet_e.jpg"></span>
                         </div>
                     </section>
-                    <section class="dtc">
+                    <section class="dtc" role="tabpanel" id="tabpanel-0-3" aria-labelledby="tab-0-3" aria-hidden="true">
                         <div class="description">
                             <h3>PayPal: <span>Donate the Change</span></h3>
                             <h4>Design &amp; Front-end Development</h4>
@@ -217,7 +216,7 @@
                         <span class="desktopScreen"><img src="./img/screens/projScreens_PPGF.jpg"></span>
                         <span class="tabletScreen"><img src="./img/screens/projScreens_PPGF_tablet.jpg"></span>
                     </section>
-                    <section class="ppcc">
+                    <section class="ppcc" role="tabpanel" id="tabpanel-0-4" aria-labelledby="tab-0-4" aria-hidden="true">
                         <div class="description">
                             <h3>PayPal: <span>Fundraiser Hub</span></h3>
                             <h4>Design &amp; Front-end Development</h4>
@@ -240,7 +239,7 @@
                             <span class="tabletScreen"><img src="./img/screens/projScreens_PPGF_tablet_2b.jpg"></span>
                         </div>
                     </section>
-                    <section class="d2ppAcq">
+                    <section class="d2ppAcq" role="tabpanel" id="tabpanel-0-5" aria-labelledby="tab-0-5" aria-hidden="true">
                         <div class="description">
                             <h3>PayPal: <span>eBay Member Acquisition</span></h3>
                             <h4>Design &amp; Front-end Development</h4>
@@ -267,7 +266,7 @@
                             <span class="tabletScreen"><img src="./img/screens/desktopPPLander.jpg"></span>
                         </div>
                     </section>
-                    <section class="adGen">
+                    <section class="adGen" role="tabpanel" id="tabpanel-0-6" aria-labelledby="tab-0-6" aria-hidden="true">
                         <div class="description">
                             <h3>PayPal: <span>Ad Generator</span></h3>
                             <h4>Design &amp; Front-end Development</h4>
@@ -310,7 +309,7 @@
                             <span class="tabletScreen"><img src="./img/screens/AdGenerator7.png"></span>
                         </div>
                     </section>
-                    <section class="selfieXO">
+                    <section class="selfieXO" role="tabpanel" id="tabpanel-0-7" aria-labelledby="tab-0-7" aria-hidden="true">
                         <div class="description">
                             <h3>PayPal: <span>Hackathon Concept - Selfie Checkout</span></h3>
                             <h4>User Experience Design</h4>
@@ -359,7 +358,7 @@
                             <p>Sad path: Traditional sign-in option available in error flow.</p>
                         </div>
                     </section>
-                    <section class="seamless">
+                    <section class="seamless" role="tabpanel" id="tabpanel-0-8" aria-labelledby="tab-0-8" aria-hidden="true">
                         <div class="description">
                             <h3>PayPal: <span>Hackathon Concept - Seamless Checkout</span></h3>
                             <h4>User Experience Design</h4>
@@ -392,16 +391,16 @@
                             <p>PayPal purchase, shipping and funding instrument review screen.</p>
                         </div>
                     </section>
-                    <ul>
-                        <li class="selected">1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>8</li>
-                        <li>9</li>
+                    <ul role="tablist">
+                        <li class="selected" data-slide-to="0" role="tab" id="tab-0-0" aria-controls="tabpanel-0-0" aria-selected="true" tabindex="0">1</li>
+                        <li data-slide-to="1" role="tab" aria-controls="tabpanel-0-1" id="tab-0-1" aria-selected="false" tabindex="0">2</li>
+                        <li data-slide-to="2" role="tab" aria-controls="tabpanel-0-2" id="tab-0-2" aria-selected="false" tabindex="0">3</li>
+                        <li data-slide-to="3" role="tab" aria-controls="tabpanel-0-3" id="tab-0-3" aria-selected="false" tabindex="0">4</li>
+                        <li data-slide-to="4" role="tab" aria-controls="tabpanel-0-4" id="tab-0-4" aria-selected="false" tabindex="0">5</li>
+                        <li data-slide-to="5" role="tab" aria-controls="tabpanel-0-5" id="tab-0-5" aria-selected="false" tabindex="0">6</li>
+                        <li data-slide-to="6" role="tab" aria-controls="tabpanel-0-6" id="tab-0-6" aria-selected="false" tabindex="0">7</li>
+                        <li data-slide-to="7" role="tab" aria-controls="tabpanel-0-7" id="tab-0-7" aria-selected="false" tabindex="0">8</li>
+                        <li data-slide-to="8" role="tab" aria-controls="tabpanel-0-8" id="tab-0-8" aria-selected="false" tabindex="0">9</li>
                     </ul>
                 </div>
              </div>
@@ -410,7 +409,6 @@
 </section>
 <footer>
     <div class="container">
-
         <main class="main">
             <div class="main-container">
                 <div class="row">

@@ -98,7 +98,7 @@
 	$.fn.xeyes = function(options) {
 		options = $.extend(defaultOptions, options);
 		var padding = parseInt(options.padding, 10),
-            arm = document.getElementById('monster-arm'),
+            arm = document.getElementById('monsterWrap__arm'),
 		    $trigger = $(options.trigger),
             $goloco = $(options.goloco),
             $tooClose = $(options.tooClose);
@@ -203,4 +203,4 @@ lastTimeMouseMoved = new Date().getTime();
 });
 
 
-jQuery(".iris").xeyes();
+jQuery(".monsterWrap__iris").xeyes();

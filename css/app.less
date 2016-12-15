@@ -1159,6 +1159,11 @@ article {
               }
               &.strike-thru {
                 text-decoration: line-through;
+                &:before {
+                  position: absolute;
+                  content: "Scrolling unavailable";
+                  clip: rect(0 0 0 0);
+                }
                 &:hover {
                   text-decoration: line-through;
                   color: #61a6e7;
@@ -1199,6 +1204,9 @@ article {
           img {
             max-width: 100%;
             height: auto;
+            position:absolute;
+            top:0;
+            left: 0;
           }
         }
         .mobileScreen {
@@ -1802,12 +1810,6 @@ footer{
         section {
           .desktopScreen {
             margin: 27px 0 0 100px;
-            img {
-              position:absolute;
-              top:0;
-              left: 0;
-              width: 425px;
-            }
           }
           .mobileScreen {
             margin: 191px 0 0 48px;

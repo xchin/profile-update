@@ -1067,12 +1067,12 @@ article {
     }
     #workStage {
       #devices {
-        margin: 150px auto 0;
+        margin: 175px auto 0;
         background:url('/img/screens/devices.png') 0 0 no-repeat;
         background-size: 100%;
         max-width: 715px;
         width: 100%;
-        height: 235px;
+        height: 205px;
         position: relative;
         z-index: 805;
         &.dskTopOnly {
@@ -1083,10 +1083,10 @@ article {
       }
       section {
         position: relative;
-        margin: -225px auto 0;
+        margin: -195px auto 0;
         max-width: 715px;
         width: 100%;
-        height: 225px;
+        height: 195px;
         -webkit-transition: opacity 1s ease-in-out;
         -moz-transition: opacity 1s ease-in-out;
         -o-transition: opacity 1s ease-in-out;
@@ -1097,7 +1097,7 @@ article {
         .description {
           position: absolute;
           text-align: left;
-          top: -180px;
+          top: -205px;
           left: 0;
           right: inherit;
           max-width: 500px;
@@ -1281,7 +1281,7 @@ article {
           display: none;
           p{
             position: absolute;
-            top: -40px;
+            top: -65px;
             left: 0;
             right: inherit;
             text-align: left;
@@ -1308,8 +1308,8 @@ article {
                 left: 50%;
                 display: block;
                 z-index: 850;
-                margin: 98.5px 0 0 -104.3px;
-                width: 113.6px;
+                margin: 11.2% 0 0 -9%;
+                width: 16.1%;
               }
             }
             span img{
@@ -1326,97 +1326,105 @@ article {
         &.seamless {
           max-width: 630px;
         }
-      }
-      .ppgf {
-        .grp2{
+        &.ppgf {
+          .grp2{
+            .mobileScreen,
+            .desktopScreen,
+            .tabletScreen {
+              background: #f5f6fa;
+            }
+          }
+        }
+        &.ppgf2 {
           .mobileScreen,
           .desktopScreen,
           .tabletScreen {
             background: #f5f6fa;
           }
         }
-      }
-      .ppgf2 {
-        .mobileScreen,
-        .desktopScreen,
-        .tabletScreen {
-          background: #f5f6fa;
+        &.p2p {
+          .mobileScreen,
+          .desktopScreen,
+          .tabletScreen {
+            background: #f8f9fb;
+          }
         }
-      }
-      .p2p {
-        .mobileScreen,
-        .desktopScreen,
-        .tabletScreen {
-          background: #f8f9fb;
+        &.dtc {
+          .mobileScreen,
+          .desktopScreen,
+          .tabletScreen {
+            background: #fff;
+          }
         }
-      }
-      .dtc {
-        .mobileScreen,
-        .desktopScreen,
-        .tabletScreen {
-          background: #fff;
+        &.ppcc {
+          .mobileScreen,
+          .desktopScreen,
+          .tabletScreen {
+            background: #f5f6fa;
+          }
         }
-      }
-      .ppcc {
-        .mobileScreen,
-        .desktopScreen,
-        .tabletScreen {
-          background: #f5f6fa;
-        }
-      }
-      .d2ppAcq {
-        .mobileScreen,
-        .tabletScreen {
-          background: #f3f3f3;
-        }
-        .desktopScreen {
-          background: #fff;
-        }
-        .grp2 {
-          .mobileScreen {
-            img {
-              max-width: 98%;
+        &.d2ppAcq {
+          .mobileScreen,
+          .tabletScreen {
+            background: #f3f3f3;
+          }
+          .desktopScreen {
+            background: #fff;
+          }
+          .grp2 {
+            .mobileScreen {
+              img {
+                max-width: 98%;
+              }
             }
           }
         }
-      }
-      .adGen {
-        .mobileScreen,
-        .desktopScreen,
-        .tabletScreen {
-          background: #6c6b6f;
+        &.adGen {
+          .mobileScreen,
+          .desktopScreen,
+          .tabletScreen {
+            background: #6c6b6f;
+          }
         }
-      }
-      .selfieXO,
-      .seamless {
-        .desktopScreen {
-          background: #fff;
-          width: 60.2%;
-          height: 145px;
-          margin: 1.2% 0 0 19.3%;
+        &.selfieXO,
+        &.seamless {
+          .description {
+            top: -225px;
+          }
+          .desktopScreen {
+            background: #fff;
+            width: 60.2%;
+            height: 145px;
+            margin: 1.2% 0 0 19.3%;
+          }
+          .grp1, .grp2, .grp3, .grp4, .grp5, .grp6, .grp7, .grp8, .grp9, .grp10 {
+            p{
+              top: -90px;
+            }
+          }
         }
       }
       ul {
         text-align: center;
         padding: 0;
-        margin: 38px auto 33px;
+        margin: 30px auto 40px;
         li{
           display: inline-block;
-          width: 20px;
-          height: 20px;
-          border-radius: 10px;
+          width: 15px;
+          height: 15px;
+          border-radius: 7.5px;
           background: transparent;
           border: 2px solid #61a6e7;
-          margin: 0 5px;
+          margin: 0 3px;
           cursor: pointer;
           text-indent: -10000px;
           &.selected {
             width: 0;
             height: 0;
             border-top: none;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 20px solid #61a6e7;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 16px solid #61a6e7;
             border-radius: 0;
             vertical-align: top;
           }
@@ -1625,7 +1633,12 @@ footer{
   #myWork {
     .container {
       #workStage {
+        #devices {
+          height: 235px;
+        }
         section {
+          height: 225px;
+          margin: -225px auto 0;
           .mobileScreen {
             height: 83px;
             &.email {
@@ -1640,11 +1653,11 @@ footer{
           .tabletScreen {
             height: 100px;
           }
-        }
-        .selfieXO,
-        .seamless{
-          .desktopScreen {
-            height: 155px;
+          &.selfieXO,
+          &.seamless{
+            .desktopScreen {
+              height: 155px;
+            }
           }
         }
       }
@@ -1665,11 +1678,11 @@ footer{
           .tabletScreen {
             height: 104px;
           }
-        }
-        .selfieXO,
-        .seamless {
-          .desktopScreen {
-            height: 170px;
+          &.selfieXO,
+          &.seamless {
+            .desktopScreen {
+              height: 170px;
+            }
           }
         }
       }
@@ -1705,11 +1718,11 @@ footer{
    .container {
       #workStage {
         #devices {
-          height: 260px;
+          height: 280px;
         }
         section {
-          height: 260px;
-          margin: -260px auto 0;
+          height: 280px;
+          margin: -280px auto 0;
           .mobileScreen {
             margin-top: 26.5%;
           }
@@ -1721,12 +1734,42 @@ footer{
             height: 114px;
             margin-top: 23.5%
           }
+          &.selfieXO,
+          &.seamless {
+            .desktopScreen {
+              height: 180px;
+              margin: 3.8% 0 0 19.3%;
+            }
+            .description {
+              top: -205px
+            }
+            .grp1, .grp2, .grp3, .grp4, .grp5, .grp6, .grp7, .grp8, .grp9, .grp10 {
+              p{
+                top: -65px;
+              }
+            }
+            .grp3 {
+              img {
+                &.profile {
+                  margin: 14% 0 0 -9%;
+                  width: 16.1%;
+                }
+              }
+            }
+          }
         }
-        .selfieXO,
-        .seamless {
-          .desktopScreen {
-            height: 180px;
-            margin: 3.8% 0 0 19.3%;
+        ul {
+          margin: 0 auto 25px;
+          li{
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            margin: 0 5px;
+            &.selected {
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: 20px solid #61a6e7;
+            }
           }
         }
       }
@@ -1752,11 +1795,11 @@ footer{
           .tabletScreen {
             height: 124px;
           }
-        }
-        .selfieXO,
-        .seamless {
-          .desktopScreen {
-            height: 195px;
+          &.selfieXO,
+          &.seamless {
+            .desktopScreen {
+              height: 195px;
+            }
           }
         }
       }
@@ -1837,18 +1880,19 @@ footer{
           }
           .grp1, .grp2, .grp3, .grp4, .grp5, .grp6, .grp7, .grp8, .grp9, .grp10 {
             p{
-              left: 104px;
+              left: 50%;
+              margin-left: -253px;
+            }
+          }
+          &.selfieXO,
+          &.seamless {
+            .desktopScreen {
+              height: 210px;
             }
           }
         }
-        .selfieXO,
-        .seamless {
-          .desktopScreen {
-            height: 210px;
-          }
-        }
         ul {
-          margin: 60px auto 20px;
+          margin: 30px auto 0;
         }
       }
     }
@@ -1886,11 +1930,11 @@ footer{
           .tabletScreen {
             height: 148px;
           }
-        }
-        .selfieXO,
-        .seamless {
-          .desktopScreen {
-            height: 230px;
+          &.selfieXO,
+          &.seamless {
+            .desktopScreen {
+              height: 230px;
+            }
           }
         }
       }
@@ -1928,11 +1972,11 @@ footer{
           .tabletScreen {
             height: 162px;
           }
-        }
-        .selfieXO,
-        .seamless {
-          .desktopScreen {
-            height: 250px;
+          &.selfieXO,
+          &.seamless {
+            .desktopScreen {
+              height: 250px;
+            }
           }
         }
       }
@@ -2017,13 +2061,8 @@ footer{
             }
           }
         }
- /*       .seamless {
-          .desktopScreen {
-            margin: 3.8% 0 0 21%;
-          }
-        } */
         ul {
-          margin: 50px auto 33px;
+          margin: 50px auto 15px
         }
       }
     }
@@ -2148,10 +2187,6 @@ and (orientation: portrait) {
   #myWork {
     padding-bottom: 143px;
     .container {
-      .row {
-        //margin-right: -15px;
-        //margin-left: -15px;
-      }
       header {
         padding: 4em 0 6em;
       }
@@ -2186,12 +2221,29 @@ and (orientation: portrait) {
           &.selfieXO,
           &.seamless{
             max-width: 715px;
-          }
-        }
-        .selfieXO,
-        .seamless {
-          .desktopScreen {
-            margin: 3.8% 0 0 15%;
+            .description {
+              top:0;
+              right: -175px;
+              left: inherit;
+            }
+            .desktopScreen {
+              margin: 3.8% 0 0 15%;
+            }
+            .grp1, .grp2, .grp3, .grp4, .grp5, .grp6, .grp7, .grp8, .grp9, .grp10 {
+              p {
+                left: inherit;
+                top: 140px;
+                right: -175px;
+              }
+            }
+            .grp3 {
+              img {
+                &.profile {
+                  margin: 13.7% 0 0 -13.7%;
+                  width: 15.8%;
+                }
+              }
+            }
           }
         }
         ul {

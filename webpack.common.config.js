@@ -19,11 +19,23 @@ module.exports = {
             exclude: /(node_modules)/,
             loader: 'url-loader?limit=10000'
         }, {
-            test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            loader: "url-loader?limit=10000&minetype=application/font-woff"
-        }, {
-            test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            test: /\.(ttf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loader: "file-loader"
+        }, {
+            test: /\.(svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            loader: 'url-loader?limit=65000&mimetype=image/svg+xml'
+        }, {
+            test: /\.(woff)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            loader: 'url-loader?limit=65000&mimetype=application/font-woff'
+        }, {
+            test: /\.(woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            loader: 'url-loader?limit=65000&mimetype=application/font-woff2'
+        }, {
+            test: /\.[ot]tf$/,
+            loader: 'url-loader?limit=65000&mimetype=application/octet-stream'
+        }, {
+            test: /\.(eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            loader: 'url-loader?limit=65000&mimetype=application/vnd.ms-fontobject'
         }]
     },
     postcss: function() {

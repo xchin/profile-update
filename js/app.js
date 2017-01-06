@@ -46,25 +46,28 @@ $(function() {
         var idx = $("#workStage section").eq(newSlide);
 
         // Resetting, swapping and blocking
-        $("#workStage section").removeClass("opaque").attr("aria-hidden", "true").children("a").attr("tabindex", -1);
-        $(idx).addClass("opaque").attr("aria-hidden", "false");
-        tabSetter();
-        $("#workStage ul li").removeClass("selected").attr({
-            "aria-selected": "false"
-        });
-        $(this).addClass("selected").attr({
-            "aria-selected": "true"
-        });
-        $("#workStage section p a").removeClass("active");
-        $("#workStage section").find("p a:contains('Scroll')").next("a").addClass("active");
-        $("#workStage .ppcc p a:first-child").removeClass("strike-thru");
-        $(idx).find("div[class*='grp']").hide();
-        $(idx).find(".grp1").show();
         $(idx).find("a").on("click", function(){
             return false;
         });
+        // Show/hide sections & update tab nav
+        $("#workStage section").removeClass("opaque").attr("aria-hidden", "true").children("a").attr("tabindex", -1);
+        $(idx).addClass("opaque").attr("aria-hidden", "false");
+        tabSetter();
+        // Carousel navigation aria and styling
+        $("#workStage ul li").removeClass("selected").attr("aria-selected", "false");
+        $(this).addClass("selected").attr("aria-selected", "true");
+        // Individual slide navigation styling
+        $("#workStage section p a").removeClass("active");
+        $("#workStage section p a.specs").show();
+        $("#workStage section.opaque a.specs").length ?
+            $("#workStage section p:last-child").prev("p").find("a:first-child").addClass("active") :
+            $("#workStage section").find(".scroll").next("a:not('.specs')").addClass("active");
+        // Reset individual slide content
+        $(idx).find("div[class*='grp']").hide();
+        $(idx).find(".grp1").show();
 
         // Strike thru to remove scroll nav without UI weirdness
+        $("#workStage .ppcc p a:first-child").removeClass("strike-thru");
         $("#workStage .ppcc p a").on("click", function(){
             if ($(this).is(":last-child")) {
                 $("#workStage .ppcc p a:first-child").addClass("strike-thru");
@@ -75,27 +78,37 @@ $(function() {
             }
         });
 
-        // Pagination reset
+        // Pagination reset if there are or aren't other nav elems
         if (($(idx).has(".scroll").length && $(idx).has("a:not(:contains('Scroll'))").length) ||
             ($(idx).has(".scroll").length && $(idx).has("a:not(:contains('Scroll''))").length === 0)) {
-            $(idx).next("a:not(:contains('Scroll'))").addClass("active");
+            $(idx).next("a:not('.scroll')").addClass("active");
         } else if (($(idx).has(".scroll").length === 0 && $(idx).has("a:not(:contains('Scroll'))").length)) {
             $(idx).find("a:first-child").addClass("active");
         }
-
-        $(".selfieXO").hasClass("opaque") || $(".seamless").hasClass("opaque") ?
+        // Sets device display to desktop only as needed
+        $(".selfieXO, .seamless, .cardFinder, .bofaStyleguide, .viewCards").hasClass("opaque") ?
             $("#devices").fadeOut(function () {$("#devices").addClass("dskTopOnly").fadeIn(500)})
             : $("#devices").removeClass("dskTopOnly");
     });
 
     // Project screens pagination
-    $("#workStage section").find("p a:not(:contains('Scroll'))").on("click", function(){
+    $("#workStage section").find("p a:not('.scroll, .specs')").on("click", function(){
         var txt = $(this).text();
         $("#workStage section").find("a").removeClass("active");
         $(this).addClass("active");
         $("#workStage section div:not(.description)").hide();
         $("#workStage section").find(".grp" + txt).show();
+        $("#workStage .bofaStyleguide.opaque .grp8").is(":visible") == true ?
+            $("a.specs").hide() :
+            $("a.specs").show();
         return false;
+    });
+
+    // Toggle specs on styleguide slide
+    $("#workStage .bofaStyleguide p a.specs").click(function () {
+        ($(this).text() === "Show Positioning") ? $(this).text("Hide Positioning") : $(this).text("Show Positioning");
+        $("#workStage .bofaStyleguide div img").toggleClass("down");
+        $("#workStage .bofaStyleguide div img:last-child").toggleClass("down");
     });
 });
 
@@ -161,6 +174,12 @@ $(function() {
             $("#workStage .p2p .grp6 .tabletScreen img").stop().animate({top: "-82%"}, 1000);
         }
     );
+    $("#workStage .cardFinder p a.scroll").bind("mouseenter focus" ,
+        function () {
+            $("#workStage .cardFinder .grp1 .desktopScreen img").stop().animate({top: "-150%"}, 2000);
+            $("#workStage .cardFinder .grp2 .desktopScreen img").stop().animate({top: "-150%"}, 2000);
+        }
+    );
     $("#workStage .dtc p a").bind("mouseenter focus" ,
         function () {
             if ($(window).width() > 701 && $(window).width() < 740) {
@@ -214,6 +233,18 @@ $(function() {
             $("#workStage .d2ppAcq .grp2 .desktopScreen img").stop().animate({top: "-22%"}, 1000);
         }
     );
+    $("#workStage .bofaStyleguide p a.scroll").bind("mouseenter focus" ,
+        function () {
+            $("#workStage .bofaStyleguide .grp1 .desktopScreen img").stop().animate({top: "-440%"}, 3000);
+            $("#workStage .bofaStyleguide .grp2 .desktopScreen img").stop().animate({top: "-240%"}, 2000);
+            $("#workStage .bofaStyleguide .grp3 .desktopScreen img").stop().animate({top: "-242.5%"}, 2000);
+            $("#workStage .bofaStyleguide .grp4 .desktopScreen img").stop().animate({top: "-340%"}, 2000);
+            $("#workStage .bofaStyleguide .grp5 .desktopScreen img").stop().animate({top: "-190%"}, 2000);
+            $("#workStage .bofaStyleguide .grp6 .desktopScreen img").stop().animate({top: "-240%"}, 2000);
+            $("#workStage .bofaStyleguide .grp7 .desktopScreen img").stop().animate({top: "-212%"}, 2000);
+            $("#workStage .bofaStyleguide .grp8 .desktopScreen img").stop().animate({top: "-60%"}, 1000);
+        }
+    );
     $("#workStage .adGen p a.scroll").bind("mouseenter focus" ,
         function () {
             $("#workStage .adGen .grp1 .mobileScreen img").stop().animate({top: "-80%"}, 2000);
@@ -237,6 +268,14 @@ $(function() {
             $("#workStage .adGen .grp7 .mobileScreen img").stop().animate({top: "-23%"}, 1000);
             $("#workStage .adGen .grp7 .desktopScreen img").stop().animate({top: "-46%"}, 1000);
             $("#workStage .adGen .grp7 .tabletScreen img").stop().animate({top: "-20%"}, 1000);
+        }
+    );
+    $("#workStage .viewCards p a.scroll").bind("mouseenter focus" ,
+        function () {
+            $("#workStage .viewCards .grp1 .desktopScreen img").stop().animate({top: "-325%"}, 3000);
+            $("#workStage .viewCards .grp2 .desktopScreen img").stop().animate({top: "-325%"}, 2000);
+            $("#workStage .viewCards .grp3 .desktopScreen img").stop().animate({top: "-169%"}, 2000);
+            $("#workStage .viewCards .grp4 .desktopScreen img").stop().animate({top: "-327.5%"}, 2000);
         }
     );
     $("#workStage section p a").bind("mouseleave blur" ,

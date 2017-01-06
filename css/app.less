@@ -1134,7 +1134,7 @@ article {
                 background: #234371;
                 color: #fff;
               }
-              &.scroll {
+              &.scroll, &.specs {
                 display: inline;
                 margin-right: 20px;
                 border: none;
@@ -1401,6 +1401,26 @@ article {
             p{
               top: -90px;
             }
+          }
+        }
+        &.cardFinder {
+          .desktopScreen {
+            background: #e4e4e4;
+          }
+        }
+        &.bofaStyleguide {
+          div {
+            img {
+              z-index: 1000;
+            }
+            img {
+              &.down {
+                z-index: 999;
+              }
+            }
+          }
+          .desktopScreen {
+            background: #fff;
           }
         }
       }

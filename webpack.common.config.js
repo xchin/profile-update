@@ -1,11 +1,20 @@
 var ProvidePlugin = require('webpack').ProvidePlugin;
 var path = require('path');
 var autoprefixer = require('autoprefixer');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var extractCSS = new ExtractTextPlugin('style.css');
+
 
 module.exports = {
     entry: [
         './js/app.js'
     ],
+    devServer: {
+        port: 8080,
+        historyApiFallback: {
+            index: '/'
+        }
+    },
     module: {
         loaders: [{
             test: /\.js$/,
@@ -18,6 +27,11 @@ module.exports = {
             test: /\.(jpe?g|png|gif)$/,
             exclude: /(node_modules)/,
             loader: 'url-loader?limit=10000'
+        }, {
+            test: /\.less$/,
+            exclude: /(node_modules)/,
+            loader: extractCSS.extract('style', 'css?sourceMap!postcss?sourceMap!less?sourceMap')
+            // loader: extractCSS.extract('style', 'css!postcss!less')
         }, {
             test: /\.(ttf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loader: "file-loader"
@@ -47,7 +61,8 @@ module.exports = {
             jQuery: 'jquery',
             "window.jQuery": 'jquery',
             "windows.jQuery": 'jquery',
-        })
+        }),
+        extractCSS
     ],
     resolve: {
         extensions: ['', '.js', '.css'],

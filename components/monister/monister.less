@@ -67,7 +67,7 @@
     .monsterWrap__iris {
       width:27px;
       height:27px;
-      background:url(/img/monster/rightEye.png) top left no-repeat;
+      background:url('../../public/img/monster/rightEye.png') top left no-repeat;
       background-size: 85%;
       &.red {
         -webkit-animation: redeye .5s forwards;
@@ -81,7 +81,7 @@
     &:last-child {
       margin: 16px 0 0 11px;
       .monsterWrap__iris {
-        background:url(/img/monster/leftEye.png) top left no-repeat;
+        background:url('../../public/img/monster/leftEye.png') top left no-repeat;
         background-size: 85%;
         &.red {
           margin-top: 0;
@@ -160,8 +160,9 @@
   display: block;
   position:  absolute;
   z-index: 998;
-  cursor: url(/img/cursor/biplane.png) default;
+  cursor: none;
 }
+
 #kongFace {
   margin: 0 0 0 20%;
   max-width: 280px;
@@ -193,164 +194,6 @@
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-
-/* CLOUD SKY
-
-.cloudBurst{
-  overflow: hidden;
-  display: block;
-  padding: 0;
-  margin: 0 auto;
-  width: 100%;
-  height: 624px;
-  position: absolute;
-  overflow-x: hidden;
-  div{
-    margin: 0px;
-    padding: 0px;
-  }
-  .cloud{
-    width: 140px;
-    height: 30px;
-    background: transparent;
-    border-radius: 30px;
-    position: absolute;
-    opacity: .7;
-    &[data-speed="1"] {
-      top: 238px;
-      left: 200px;
-    }
-    &[data-speed="2"] {
-      top: -15px;
-      left: -200px;
-      opacity: .4;
-    }
-    &[data-speed="3"] {
-      left: 440px;
-      top: 122px
-    }
-    &[data-speed="4"] {
-      top: 145px;
-    }
-    &[data-speed="5"] {
-      top: 425px;
-      left: 500px;
-    }
-    &[data-speed="6"] {
-      top: 265px;
-      opacity: .4;
-      z-index: 1100;
-    }
-    &[data-type*="white"] {
-      &:before {
-        content: "";
-        display: block;
-        width: 50%;
-        height: 150%;
-        top: -20px;
-        left: 25px;
-        background-color: #fff;
-        border-radius: 30px;
-        position: absolute;
-      }
-    }
-    &[data-type="white_1"]:before{
-      left: 20px;
-      box-shadow: 80px 0 5px 10px #fff, 40px 0 5px 20px #fff, 110px 0 5px -5px #fff;
-    }
-
-    &[data-type="white_2"]:before{
-      box-shadow: 40px -10px 5px 20px #fff, 80px -10px 5px 10px #fff, 115px -5px 5px -10px #fff;
-    }
-
-    &[data-type="white_3"]:before{
-      box-shadow: 40px -10px 5px 15px #fff, 90px 0px 5px 15px #fff, 40px 25px 5px 20px #fff,
-      0 40px 5px -5px #fff, 80px -10px 5px 10px #fff, 115px -5px 5px -10px #fff;
-    }
-
-    &[data-type="white_4"]:before{
-      left: 20px;
-      box-shadow: 80px 0 5px 10px #fff, 40px 0 5px 20px #fff, 110px 0 5px -5px #fff,
-      80px 25px 5px 10px #fff, 40px 25px 5px 20px #fff, 0 40px 5px -5px #fff;
-    }
-
-    &[data-type="white_5"]:before{
-      box-shadow: 60px -10px 5px 20px #fff, -5px -5px 5px 15px #fff, 120px 5px 5px 10px #fff,
-      20px 30px 5px 20px #fff, 70px 30px 5px 10px #fff, 105px 40px 5px -10px #fff;
-    }
-
-    &[data-type="white_6"]:before{
-      box-shadow: 40px -10px 5px 15px #fff, 90px 0 5px 15px #fff, 20px 30px 5px 15px #fff,
-      80px 40px 5px 15px #fff, 90px 0 5px 15px #fff, 95px 30px 5px 15px #fff;
-    }
-  }
-}
-
-@-webkit-keyframes cloudfloat
-{
-  from {left:-30%;}
-  to {left:125%;}
-}
-@-moz-keyframes cloudfloat
-{
-  from {left:-30%;}
-  to {left:125%;}
-}
-@-ms-keyframes cloudfloat
-{
-  from {left:-30%;}
-  to {left:125%;}
-}
-@-o-keyframes cloudfloat
-{
-  from {left:-30%;}
-  to {left:125%;}
-}
-@keyframes cloudfloat
-{
-  from {left:-30%;}
-  to {left:125%;}
-}
-
-[data-speed="1"]{
-  animation: cloudfloat 68.20212s;
-  -webkit-animation: cloudfloat 68.20212s;
-
-}
-[data-speed="2"]{
-  animation: cloudfloat 153.08773s;
-  -webkit-animation: cloudfloat 153.08773s;
-
-}
-[data-speed="3"]{
-  animation: cloudfloat 100.62616s;
-  -webkit-animation: cloudfloat 100.62616s;
-
-}
-[data-speed="4"]{
-  animation: cloudfloat 374.26929s;
-  -webkit-animation: cloudfloat 374.26929s;
-
-}
-[data-speed="5"]{
-  animation: cloudfloat 122.08773s;
-  -webkit-animation: cloudfloat 122.08773s;
-
-}
-[data-speed="6"]{
-  animation: cloudfloat 195.58272s;
-  -webkit-animation: cloudfloat 195.58272s;
-
-}
-
-.cloud{
-  -webkit-animation-timing-function:linear;
-  -webkit-animation-iteration-count:infinite;
-  animation-timing-function:linear;
-  animation-iteration-count:infinite;
-  -webkit-animation-delay: -50s;
-}
-*/
 
 @media (min-width: 320px) {
   .monsterWrap {
@@ -556,3 +399,20 @@
     left: 64%;
   }
 }
+@media all and (-webkit-min-device-pixel-ratio: 1.5),
+all and (-o-min-device-pixel-ratio: 3 / 2),
+all and (min--moz-device-pixel-ratio: 1.5),
+all and (min-device-pixel-ratio: 1.5) {
+  #airSpace {
+    // cursor: url('../../public/img/cursor/biplane@2x.png'), url('../../public/img/cursor/biplane@2x.png'), auto;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  #airSpace {
+    // cursor: url('../../public/img/cursor/biplane@2x.png'), url('../../public/img/cursor/biplane@2x.png'), auto;
+  }
+}
+
+
+

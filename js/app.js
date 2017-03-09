@@ -1,15 +1,102 @@
 import "../css/app.less";
 import $ from "jquery";
-import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import "../components/monister/eyes.js";
-import "../components/slider/unslider.js";
 import "waypoints";
 import "scrollTo";
 import "./min/app.js";
 import "./min/init.min.js";
 
 
+function progressTicker() {
+    $(".grp3 img.profile").removeClass().next("img").last().addClass("profile");
+}
+
+// update carousel navigation for accessibility
+function tabSetter() {
+    $("#workStage a").attr("tabindex", -1);
+    $("#workStage .opaque a").attr("tabindex", 0);
+};
+tabSetter();
+
+//Pause and resume animation function
+(function() {
+    var $ = jQuery,
+        pauseId = 'jQuery.pause',
+        uuid = 1,
+        oldAnimate = $.fn.animate,
+        anims = {};
+
+    function now() { return new Date().getTime(); }
+
+    $.fn.animate = function(prop, speed, easing, callback) {
+        var optall = $.speed(speed, easing, callback);
+        optall.complete = optall.old; // unwrap callback
+        return this.each(function() {
+            // check pauseId
+            if (! this[pauseId])
+                this[pauseId] = uuid++;
+            // start animation
+            var opt = $.extend({}, optall);
+            oldAnimate.apply($(this), [prop, $.extend({}, opt)]);
+            // store data
+            anims[this[pauseId]] = {
+                run: true,
+                prop: prop,
+                opt: opt,
+                start: now(),
+                done: 0
+            };
+        });
+    };
+
+    $.fn.pause = function() {
+        return this.each(function() {
+            // check pauseId
+            if (! this[pauseId])
+                this[pauseId] = uuid++;
+            // fetch data
+            var data = anims[this[pauseId]];
+            if (data && data.run) {
+                data.done += now() - data.start;
+                if (data.done > data.opt.duration) {
+                    // remove stale entry
+                    delete anims[this[pauseId]];
+                } else {
+                    // pause animation
+                    $(this).stop();
+                    data.run = false;
+                }
+            }
+        });
+    };
+
+    $.fn.resume = function() {
+        return this.each(function() {
+            // check pauseId
+            if (! this[pauseId])
+                this[pauseId] = uuid++;
+            // fetch data
+            var data = anims[this[pauseId]];
+            if (data && ! data.run) {
+                // resume animation
+                data.opt.duration -= data.done;
+                data.done = 0;
+                data.run = true;
+                data.start = now();
+                oldAnimate.apply($(this), [data.prop, $.extend({}, data.opt)]);
+            }
+        });
+    };
+})();
+
+// PAGE INTERACTIONS
 $(function() {
+    // default screen titles for ADA
+    $("#workStage .mobileScreen span a").attr("title", "Zoom mobile screen view");
+    $("#workStage .desktopScreen span a").attr("title", "Zoom desktop screen view");
+    $("#workStage .tabletScreen span a").attr("title", "Zoom tablet screen view");
+
+    // progress ticker for selfie snapshot
     var refreshIntervalId = setInterval(progressTicker, 1000);
 
     $(".selfieXO .description p a:nth-child(3)").click(function() {
@@ -20,27 +107,14 @@ $(function() {
         $(".grp3 span").next("img").addClass("profile");
         clearInterval(refreshIntervalId);
     })
-});
 
-function progressTicker() {
-    $(".grp3 img.profile").removeClass().next("img").last().addClass("profile");
-}
-
-// scroll to sections
-$(function() {
+    // scroll to sections
     $("[id^=scrollTo]").click(function() {
         var id = $(this).attr("id").slice(9);
-        $(window).scrollTo($("#" + id), 1000, { offset: { top: -51, left: 0 } });
+        $(window).scrollTo($("#" + id), 1000, { offset: { top: 50, left: 0 } });
+        return false;
     });
-});
-// update carousel navigation for accessibility
-function tabSetter() {
-    $("#workStage a").attr("tabindex", -1);
-    $("#workStage .opaque a").attr("tabindex", 0);
-};
-tabSetter();
-// Project gallery navigation
-$(function() {
+    // Project gallery navigation
     $("#workStage ul").on("click", "li", function() {
         var newSlide = $(this).index();
         var idx = $("#workStage section").eq(newSlide);
@@ -89,6 +163,11 @@ $(function() {
         $(".selfieXO, .seamless, .cardFinder, .bofaStyleguide, .viewCards").hasClass("opaque") ?
             $("#devices").fadeOut(function () {$("#devices").addClass("dskTopOnly").fadeIn(500)})
             : $("#devices").removeClass("dskTopOnly");
+
+        // Sets device display to mobile only as needed
+        $(".autoCoupons").hasClass("opaque") ?
+            $("#devices").fadeOut(function () {$("#devices").addClass("mobileOnly").fadeIn(500)})
+            : $("#devices").removeClass("mobileOnly");
     });
 
     // Project screens pagination
@@ -98,7 +177,7 @@ $(function() {
         $(this).addClass("active");
         $("#workStage section div:not(.description)").hide();
         $("#workStage section").find(".grp" + txt).show();
-        $("#workStage .bofaStyleguide.opaque .grp8").is(":visible") == true ?
+        $("#workStage .bofaStyleguide.opaque .grp8").is(":visible") === true ?
             $("a.specs").hide() :
             $("a.specs").show();
         return false;
@@ -110,15 +189,26 @@ $(function() {
         $("#workStage .bofaStyleguide div img").toggleClass("down");
         $("#workStage .bofaStyleguide div img:last-child").toggleClass("down");
     });
-});
 
-// Project screen animations
-$(function() {
-    $("a.scroll").click(
+    // Project screen animations
+    $('a.scroll').hover(function(){
+        $(this).text('Hold-click will pause');
+    }, function() {
+        $(this).text('Scroll the experience');
+    });
+    $("a.scroll").bind("click mousedown" ,
         function () {
+            $("#workStage section span img").pause();
+            $(this).text('Release to resume');
             return false
-        });
-
+        }
+    );
+    $("a.scroll").bind("click mouseup" ,
+        function () {
+            $("#workStage section span img").resume();
+            $(this).text('Scroll the experience');
+        }
+    );
     $("#workStage .ppgf p a.scroll").bind("mouseenter focus" ,
         function () {
             $("#workStage .ppgf .grp1 .mobileScreen img").stop().animate({top: "-6.5%"}, 500);
@@ -286,5 +376,39 @@ $(function() {
             $("#workStage .d2ppAcq .grp1 .tabletScreen img:last-child").stop().animate({top: "5px"}, "slow");
         }
     );
+
+    // Screen zoom
+    $("#workStage section span a").bind("click" ,
+        function () {
+            $("#home-top").addClass("hidden");
+            $("#myWork, #empireBldg").css("z-index", "initial");
+            $("#workStage section.opaque").addClass("zoomed");
+            $(this).parent().addClass("screenZoom");
+            $(this).next("img").addClass("lrg");
+            $(".overlay").addClass("open");
+            $("#me").waypoint(
+                function(direction) {
+                    if (direction ==="up") {
+                        $(".overlay-close").trigger("click");
+                    }
+                }, { offset: "-50%" });
+            return false
+        }
+    );
+    $(".overlay-close").bind("click" ,
+        function () {
+            $("#home-top").removeClass("hidden");
+            $("#myWork").css("z-index", "995");
+            $("#empireBldg").css("z-index", "981");
+            $("#workStage section.opaque").removeClass("zoomed");
+            $("#workStage section.opaque span").removeClass("screenZoom");
+            $("#workStage section.opaque span img").removeClass("lrg");
+            $(".overlay").removeClass("open");
+            return false
+        }
+    );
 });
+
+
+
 

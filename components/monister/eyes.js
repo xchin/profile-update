@@ -159,7 +159,7 @@ var mX = 0;
 var lastTimeMouseMoved = '';
 $('#airSpace').mousemove(function(e) {
 
-lastTimeMouseMoved = new Date().getTime();
+    lastTimeMouseMoved = new Date().getTime();
     var isRetina = (
     window.devicePixelRatio > 1 ||
     (window.matchMedia && window.matchMedia("(-webkit-min-device-pixel-ratio: 1.5),(-moz-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)").matches)
@@ -168,11 +168,11 @@ lastTimeMouseMoved = new Date().getTime();
         var currentTime = new Date().getTime();
         if(currentTime - lastTimeMouseMoved > 500){
             /* if(isRetina){
-                $('#noflyZone').css({'cursor': 'url(img/biplane@2x.png), default'});
-            }
-            else {
-                $('#noflyZone').css({'cursor': 'url(img/biplane.png), default'});
-            } */
+             $('#noflyZone').css({'cursor': 'url(img/biplane@2x.png), default'});
+             }
+             else {
+             $('#noflyZone').css({'cursor': 'url(img/biplane.png), default'});
+             } */
             $('#airSpace, #kongFace, #kongSlap').css({'cursor': 'url(img/cursor/biplane.png), default'});
         }
     },500);
@@ -180,20 +180,20 @@ lastTimeMouseMoved = new Date().getTime();
     // moving left
     if (e.pageX < mX) {
         /* if(isRetina){
-            $('#noflyZone').css({'cursor': 'url(img/cursor/biplaneLeft@2x.png), default'});
-        }
-        else {
-            $('#noflyZone').css({'cursor': 'url(img/cursor/biplaneLeft.png), default'});
-        } */
+         $('#noflyZone').css({'cursor': 'url(img/cursor/biplaneLeft@2x.png), default'});
+         }
+         else {
+         $('#noflyZone').css({'cursor': 'url(img/cursor/biplaneLeft.png), default'});
+         } */
         $('#airSpace, #kongFace, #kongSlap').css({'cursor': 'url(img/cursor/biplaneLeft.png), default'});
-    // moving right
+        // moving right
     } else {
         /* if(isRetina){
-            $('#noflyZone').css({'cursor': 'url(img/cursor/biplaneRight@2x.png), default'});
-        }
-        else {
-            $('#noflyZone').css({'cursor': 'url(img/cursor/biplaneRight.png), default'});
-        } */
+         $('#noflyZone').css({'cursor': 'url(img/cursor/biplaneRight@2x.png), default'});
+         }
+         else {
+         $('#noflyZone').css({'cursor': 'url(img/cursor/biplaneRight.png), default'});
+         } */
         $('#airSpace, #kongFace, #kongSlap').css({'cursor': 'url(img/cursor/biplaneRight.png), default'});
     }
 
@@ -201,6 +201,32 @@ lastTimeMouseMoved = new Date().getTime();
     mX = e.pageX;
 
 });
+
+function collision($div1, $div2) {
+    var x1 = $div1.offset().left;
+    var y1 = $div1.offset().top;
+    var h1 = $div1.outerHeight(true);
+    var w1 = $div1.outerWidth(true);
+    var b1 = y1 + h1;
+    var r1 = x1 + w1;
+    var x2 = $div2.offset().left;
+    var y2 = $div2.offset().top;
+    var h2 = $div2.outerHeight(true);
+    var w2 = $div2.outerWidth(true);
+    var b2 = y2 + h2;
+    var r2 = x2 + w2;
+
+    if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+    return true;
+}
+
+
+/* window.setInterval(function() {
+    collision($('#kongSlap'), $('#biplane')) === true ?
+        $('#biplane').css({'background': 'url(/img/cursor/boom.png) 0 0 no-repeat'})
+        : window.clearInterval();
+}, 200); */
+
 
 
 jQuery(".monsterWrap__iris").xeyes();
